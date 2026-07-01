@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yu-Ting (Harry) Liao — the body as an interface</title>
+<meta name="description" content="Yu-Ting (Harry) Liao designs the body as an interface — embodied sound, wearable instruments, and real-time AI. MA Computational Arts, Goldsmiths." />
+<meta property="og:title" content="Yu-Ting (Harry) Liao" />
+<meta property="og:description" content="Designing the body as an interface — embodied sound, wearable instruments, real-time AI." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__brand" href="index.html">YU-TING&nbsp;LIAO</a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">menu</button>
+    <nav class="nav__links" id="menu">
+      <a href="#work">work</a>
+      <a href="solo-choir.html">solo choir</a>
+      <a href="#about">about</a>
+      <a href="#cv">cv</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker reveal">Yu-Ting (Harry) Liao — designer &amp; computational artist</p>
+      <h1 class="hero__statement reveal">Designing the body as an interface<span class="dim"> — embodied sound, wearable instruments, real-time AI.</span></h1>
+      <p class="hero__sub reveal">a five-year thread, fashion pattern-cutting → computational arts &nbsp;·&nbsp; one voice → a choir</p>
+      <div class="hero__media reveal">
+        <a class="media media--wide" href="solo-choir.html" aria-label="Solo Choir — view case study">
+          <span class="media__center"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="media__label"><span class="mono">▶</span>&nbsp;solo choir — hero loop &nbsp;·&nbsp; replace /media/solo-choir-hero.mp4</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Selected work</h2>
+        <span class="kicker">2024 — 2026</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- FEATURE: Solo Choir -->
+        <article class="card card--feature reveal">
+          <a class="media media--wide" href="solo-choir.html" aria-label="Solo Choir — view case study">
+            <span class="media__center"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
+            <span class="media__label"><span class="mono">▶</span>&nbsp;the rig + the harmony lines &nbsp;·&nbsp; /media/solo-choir-cover.mp4</span>
+          </a>
+          <div class="card__meta"><span class="card__title">Solo Choir</span><span class="tag">Research</span><span class="tag">MA thesis</span></div>
+          <p class="card__desc">A wearable instrument that turns one singer into a choir — diatonic SATB harmony re-synthesised in your own voice, learned <em>into</em> the body via bone conduction and performed <em>from</em> it.</p>
+          <div class="card__foot">
+            <span class="card__tech">neural voice conversion · real-time on CPU · bone conduction · wearable</span>
+            <a class="link" href="solo-choir.html">view case study →</a>
+          </div>
+        </article>
+
+        <!-- Choir of Three -->
+        <article class="card reveal">
+          <span class="media">
+            <span class="media__label"><span class="mono">▶</span>&nbsp;AI choir + own voice &nbsp;·&nbsp; /media/choir-of-three.mp4</span>
+          </span>
+          <div class="card__meta"><span class="card__title">Choir of Three (and One)</span><span class="tag">Sound</span></div>
+          <p class="card__desc">A DDSP model trained on ~10 minutes of my own singing sings three parts of a Bach chorale; the AI yields to silence when I hold my own part.</p>
+          <div class="card__foot">
+            <span class="card__tech">DDSP · Tone.js · p5.js</span>
+            <a class="link" href="https://github.com/yvwHY/ChoirofThree_andOne" target="_blank" rel="noopener">↗ github</a>
+          </div>
+        </article>
+
+        <!-- The Bonnet -->
+        <article class="card reveal">
+          <span class="media">
+            <span class="media__label"><span class="mono">▶</span>&nbsp;the veil drops &nbsp;·&nbsp; /media/bonnet.mp4</span>
+          </span>
+          <div class="card__meta"><span class="card__title">The Bonnet</span><span class="tag">Wearable</span></div>
+          <p class="card__desc">An anti-surveillance headpiece: a custom-trained YOLOv8 model spots a CCTV camera and a servo drops a fabric veil over the face — reclaiming the gaze.</p>
+          <div class="card__foot">
+            <span class="card__tech">YOLOv8 · Arduino · servo</span>
+          </div>
+        </article>
+
+        <!-- Fabri-Form -->
+        <article class="card reveal">
+          <span class="media">
+            <span class="media__label"><span class="mono">▶</span>&nbsp;laser traces the pattern &nbsp;·&nbsp; /media/fabri-form.mp4</span>
+          </span>
+          <div class="card__meta"><span class="card__title">Fabri-Form</span><span class="tag">Robotics</span></div>
+          <p class="card__desc">An embodied robotic interface for pattern-cutting: a multimodal LLM reads a hand-drawn sketch, generates 2D cutting paths, and a Pico-driven laser traces them onto fabric.</p>
+          <div class="card__foot">
+            <span class="card__tech">multimodal LLM · Raspberry Pi Pico · laser</span>
+          </div>
+        </article>
+
+        <!-- Gesture-Float -->
+        <article class="card reveal">
+          <span class="media">
+            <span class="media__label"><span class="mono">▶</span>&nbsp;flying by gesture &nbsp;·&nbsp; /media/gesture-float.mp4</span>
+          </span>
+          <div class="card__meta"><span class="card__title">Gesture-Float</span><span class="tag">Hardware</span></div>
+          <p class="card__desc">A wireless interactive flying unit with embodied control — an arm-mounted Pico W streams hand pitch and roll over Wi-Fi to a helium balloon unit, hand-soldered for stable, organic flight.</p>
+          <div class="card__foot">
+            <span class="card__tech">Pico W · UDP · PCB · soldering</span>
+            <a class="link" href="https://vimeo.com/1176254975" target="_blank" rel="noopener">↗ video</a>
+          </div>
+        </article>
+
+        <!-- Infolution -->
+        <article class="card reveal">
+          <span class="media">
+            <span class="media__label"><span class="mono">▶</span>&nbsp;information trees &nbsp;·&nbsp; /media/infolution.mp4</span>
+          </span>
+          <div class="card__meta"><span class="card__title">Infolution</span><span class="tag">Web</span></div>
+          <p class="card__desc">A live platform asking how the form and meaning of information evolve online — uploaded images mutate through AI into branching 3D information trees. 72 participant interactions studied.</p>
+          <div class="card__foot">
+            <span class="card__tech">React · Three.js · generative AI</span>
+            <a class="link" href="https://infolution.vercel.app" target="_blank" rel="noopener">↗ live</a>
+          </div>
+        </article>
+
+        <!-- Draping Duet -->
+        <article class="card reveal">
+          <span class="media">
+            <span class="media__label"><span class="mono">▶</span>&nbsp;draping as performance &nbsp;·&nbsp; /media/draping-duet.mp4</span>
+          </span>
+          <div class="card__meta"><span class="card__title">Draping Duet</span><span class="tag">Performance</span></div>
+          <p class="card__desc">A real-time audiovisual installation reframing fashion draping as choreography — StreamDiffusion turns the atelier into flowing silk while a mic amplifies the ASMR friction of the cloth.</p>
+          <div class="card__foot">
+            <span class="card__tech">StreamDiffusion · TouchDesigner · OBS</span>
+          </div>
+        </article>
+
+        <!-- Pop-Up -->
+        <article class="card reveal">
+          <span class="media">
+            <span class="media__label"><span class="mono">▦</span>&nbsp;PSH Atrium &nbsp;·&nbsp; /media/popup.jpg</span>
+          </span>
+          <div class="card__meta"><span class="card__title">Pop-Up · Harmonizing!</span><span class="tag">Exhibition</span></div>
+          <p class="card__desc">Exhibited a live vocal-harmony instrument at the Computational Arts Pop-Up (PSH Atrium, Goldsmiths) — and designed the show's graphics and caption cards for all 37 works.</p>
+          <div class="card__foot">
+            <span class="card__tech">exhibition · curation · graphic design</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>About</h2><span class="kicker">art → design → tech</span></div>
+      <div class="cols">
+        <div class="reveal">
+          <p class="lead">I work where the body meets sound and machine — building wearable instruments and real-time systems that let a person <span class="dim">extend, feel, and learn through their own body.</span></p>
+          <p class="prose" style="margin-top:22px;">A five-year route from <strong>fashion pattern-cutting</strong> through <strong>generative-AI media</strong> to <strong>computational arts</strong> — with one through-line that keeps surfacing: turning <strong>one voice into a choir</strong>. My flagship, <a class="link" href="solo-choir.html">Solo Choir</a>, makes that literal: a wearable that lets a single singer become a simultaneous SATB chord, in their own re-synthesised voice.</p>
+          <p class="prose" style="margin-top:16px;">Research interests: the body as an interface, embodied sound, wearable hardware, and real-time AI for music.</p>
+        </div>
+        <div class="reveal">
+          <ul class="facts">
+            <li><span>2025—26</span><span>MA Computational Arts — Goldsmiths, University of London</span></li>
+            <li><span>2022—24</span><span>MA Digital Multimedia Arts — Shih Hsin University (thesis: generative-AI NPCs, UE5 + GPT-4)</span></li>
+            <li><span>2016—19</span><span>BA Fashion Pattern Cutting — University of the Arts London</span></li>
+            <li><span>2020—25</span><span>Visual / graphic designer — Taipei (brand identity, packaging, campaigns)</span></li>
+            <li><span>tools</span><span>Pico W · Arduino · YOLOv8 · OpenCV · DDSP · p5.js · Tone.js · TouchDesigner · UE5</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>CV &amp; contact</h2><span class="kicker">get in touch</span></div>
+      <div class="cols">
+        <div class="reveal">
+          <p class="lead">Open to PhD positions in embodied interaction &amp; music technology, and to industry collaborations in real-time audio / wearables.</p>
+          <p style="margin-top:22px;"><a class="btn" href="cv.pdf" target="_blank" rel="noopener"><span class="mono">↓</span> Download CV (PDF)</a></p>
+          <p class="kicker" style="margin-top:12px;">drop your CV file at /site/cv.pdf</p>
+        </div>
+        <div class="reveal">
+          <ul class="facts">
+            <li><span>email</span><span><a class="link" href="mailto:yvw.liao@gmail.com">yvw.liao@gmail.com</a></span></li>
+            <li><span>github</span><span><a class="link" href="https://github.com/yvwHY" target="_blank" rel="noopener">github.com/yvwHY</a></span></li>
+            <li><span>vimeo</span><span><a class="link" href="https://vimeo.com" target="_blank" rel="noopener">add your channel</a></span></li>
+            <li><span>instagram</span><span><a class="link" href="https://instagram.com/hyliao_" target="_blank" rel="noopener">@hyliao_</a></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot__note">© 2026 Yu-Ting (Harry) Liao — the body as an interface</span>
+    <span style="display:flex; gap:24px;">
+      <a href="mailto:yvw.liao@gmail.com">email</a>
+      <a href="https://github.com/yvwHY" target="_blank" rel="noopener">github</a>
+      <a href="https://instagram.com/hyliao_" target="_blank" rel="noopener">instagram</a>
+      <a href="solo-choir.html">solo choir</a>
+    </span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

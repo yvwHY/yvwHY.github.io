@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solo Choir — a wearable instrument that turns one singer into a choir</title>
+<meta name="description" content="Solo Choir: a real-time wearable instrument that turns one singer into a diatonic SATB choir in their own voice. The body as an interface for harmony — learned into the body, performed from it." />
+<meta property="og:title" content="Solo Choir" />
+<meta property="og:description" content="A wearable instrument that turns one singer into a choir, in their own voice." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__brand" href="index.html">← YU-TING&nbsp;LIAO</a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">menu</button>
+    <nav class="nav__links" id="menu">
+      <a href="#instrument">instrument</a>
+      <a href="#studio">studio</a>
+      <a href="#making">making</a>
+      <a href="#research">research</a>
+      <a href="index.html">index</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker reveal">MA Computational Arts thesis · Goldsmiths · 2026 — mashup: throat mic + neural voice + bone conduction</p>
+      <h1 class="hero__statement reveal">Solo Choir</h1>
+      <p class="lead reveal" style="margin-top:18px;">A wearable instrument that turns <strong>one singer</strong> into a choir — diatonic SATB harmony, re-synthesised in your <span class="dim">own voice</span>, in real time, on a laptop CPU.</p>
+      <div class="hero__media reveal">
+        <span class="media media--wide">
+          <span class="media__center"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="media__label"><span class="mono">▶</span>&nbsp;hero loop — the rig + the live harmony &nbsp;·&nbsp; /media/sc-hero.mp4</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH QUESTION -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <p class="lead reveal" style="max-width:34ch;">The body is the interface for harmony. The research question: does sending harmony <span class="dim">into</span> and <span class="dim">from</span> the body change how a singer <strong>learns</strong> and <strong>performs</strong> it — compared with a screen or a speaker?</p>
+    </div>
+  </section>
+
+  <!-- 01 — INSTRUMENT -->
+  <section id="instrument">
+    <div class="wrap">
+      <div class="block reveal">
+        <div class="block__body">
+          <span class="num">01 — the instrument</span>
+          <h3>One body becomes a whole chord — at the same moment you sing.</h3>
+          <p class="prose">A personally-trained neural voice-conversion model re-synthesises your live voice and adds diatonically-correct harmony voices. The human voice is monophonic — one note at a time; Solo Choir lets a single body sound a <strong>simultaneous SATB chord</strong>. That simultaneity is the literal extension of the body — a <em>choir of one</em>.</p>
+          <p class="prose" style="margin-top:14px;">Two embodied modes of one idea:</p>
+          <p class="prose" style="margin-top:6px;"><strong>Learn in-body</strong> — open-ear bone conduction places an independent harmony target into your head while you still hear your own real voice, so you train the interval by feel. <strong>Perform from-body</strong> — the synthetic choir radiates from a small cup at your mouth and blends with your live voice, reading as one person.</p>
+          <div class="specs">
+            <div class="spec"><div class="spec__n">~47<small>&nbsp;ms</small></div><div class="spec__l">live latency</div></div>
+            <div class="spec"><div class="spec__n">4</div><div class="spec__l">SATB voices</div></div>
+            <div class="spec"><div class="spec__n">CPU</div><div class="spec__l">no GPU</div></div>
+            <div class="spec"><div class="spec__n">1</div><div class="spec__l">singer</div></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">throat mic</span><span class="tag">neural voice conversion</span><span class="tag">DAEX cup</span><span class="tag">bone conduction</span>
+          </div>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall">
+            <span class="media__center"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
+            <span class="media__label"><span class="mono">▶</span>&nbsp;the embodied loop &nbsp;·&nbsp; /media/sc-loop.mp4</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — STUDIO -->
+  <section id="studio" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="block block--flip reveal">
+        <div class="block__media">
+          <span class="media">
+            <span class="media__label"><span class="mono">▶</span>&nbsp;dragging the harmony lines &nbsp;·&nbsp; /media/sc-studio.mp4</span>
+          </span>
+        </div>
+        <div class="block__body">
+          <span class="num">02 — the studio</span>
+          <h3>See, shape, and hear harmony — then sing it in your own voice.</h3>
+          <p class="prose">Hum a melody; the system transcribes it, auto-arranges voice-led SATB, and draws each voice as a <strong>draggable pitch-contour line</strong>. Reshape pitch, onset and duration freely; a light synth previews instantly, then the engine renders the edited score into a choir of your own voice — per-voice stems you can mix.</p>
+          <p class="prose" style="margin-top:14px;">The old fixed parallel harmony becomes a <strong>special case</strong> of an editable form — nothing lost, generalised. The hero shifts from low latency to <strong>compositional control over harmony</strong>.</p>
+          <div class="tag-row">
+            <span class="tag" style="border-color:var(--melody); color:var(--melody);">melody</span>
+            <span class="tag" style="border-color:var(--sop); color:var(--sop);">soprano</span>
+            <span class="tag" style="border-color:var(--alto); color:var(--alto);">alto</span>
+            <span class="tag" style="border-color:var(--tenor); color:var(--tenor);">tenor</span>
+            <span class="tag" style="border-color:var(--bass); color:var(--bass);">bass</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — MAKING / HARDWARE -->
+  <section id="making">
+    <div class="wrap">
+      <div class="block reveal">
+        <div class="block__body">
+          <span class="num">03 — the making</span>
+          <h3>A hand-built rig: a wire armature wrapped in paper fibre.</h3>
+          <p class="prose">The wearable is built by hand — a bent-wire skeleton wrapped in stiffened paper fibre, in the lineage of body-extension sculpture rather than a clean 3D print. The mouth cup stays rigid and light so a surface exciter can radiate the choir; the throat mic and bone-conduction transducer are mechanically isolated so the rig never feeds back on itself.</p>
+          <p class="prose" style="margin-top:14px;"><strong>Test A — feedback / self-stacking:</strong> passed by ear. Worn and sung through, the bone-conduction-out + throat-mic-in loop survives with no ring and no gradual self-stacking. <strong>Test B</strong> confirmed a surface exciter can't usefully radiate <em>through</em> tissue — so perform-mode commits to the cup as a spatial source at the mouth. Honest engineering: full simultaneous SATB is offline-rendered; live runs two to three voices on CPU.</p>
+          <div class="tag-row">
+            <span class="tag">wire + paper fibre</span><span class="tag">DAEX25CT-4 exciter</span><span class="tag">Dayton BCE-1</span><span class="tag">PAM8403</span><span class="tag">Raspberry Pi Pico W</span>
+          </div>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall">
+            <span class="media__label"><span class="mono">▦</span>&nbsp;the rig &nbsp;·&nbsp; /media/sc-rig.jpg</span>
+          </span>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <p class="kicker" style="margin-bottom:12px;">7 months of making — bench tests · training · the build</p>
+        <div class="wall">
+          <span class="media"><span class="media__label">01</span></span>
+          <span class="media"><span class="media__label">02</span></span>
+          <span class="media"><span class="media__label">03</span></span>
+          <span class="media"><span class="media__label">04</span></span>
+          <span class="media"><span class="media__label">05</span></span>
+          <span class="media"><span class="media__label">06</span></span>
+          <span class="media"><span class="media__label">07</span></span>
+          <span class="media"><span class="media__label">08</span></span>
+          <span class="media"><span class="media__label">09</span></span>
+          <span class="media"><span class="media__label">10</span></span>
+          <span class="media"><span class="media__label">11</span></span>
+          <span class="media"><span class="media__label">12</span></span>
+        </div>
+        <p class="kicker" style="margin-top:12px;">drop process images in /media/process/ and swap these tiles</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — RESEARCH -->
+  <section id="research" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>04 — research &amp; contribution</h2><span class="kicker">from demo to research</span></div>
+      <div class="cols">
+        <div class="reveal">
+          <p class="lead">The contribution is the <span class="dim">integration</span>: live, per-voice neural SATB harmony, in the singer's own voice, on CPU, with an editable score — delivered through the body.</p>
+          <p class="prose" style="margin-top:20px;">Each ingredient has prior art — real-time diatonic harmonisers, one-singer-to-his-own-voices instruments, neural voice conversion, wearable vocal controllers — but no single system combines them, and none delivers an independent harmony target <em>into</em> the head to learn a part. That embodied-delivery claim is framed as a hypothesis to be tested, not a settled result.</p>
+        </div>
+        <div class="reveal">
+          <ul class="facts">
+            <li><span>evaluation</span><span>bone conduction vs headphones vs speaker — which lets a singer hold a harmony part fastest and most in-tune (pitch-error telemetry; pilot)</span></li>
+            <li><span>baseline</span><span>naive code pitch-shift vs neural re-synthesis — A/B, no human subjects</span></li>
+            <li><span>positioning</span><span>vocoder / talkbox lineage · Collier–Bloomberg harmoniser · Cococo · Holly+ · body-as-interface sound art</span></li>
+            <li><span>honesty</span><span>live = 2–3 voices; full SATB = offline render. Liveness, not low latency, is the point.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot__note">Solo Choir — Yu-Ting (Harry) Liao · Goldsmiths 2026 · supervisor Daniel Berio</span>
+    <span style="display:flex; gap:24px;">
+      <a href="index.html">← all work</a>
+      <a href="mailto:yvw.liao@gmail.com">email</a>
+      <a href="https://github.com/yvwHY" target="_blank" rel="noopener">github</a>
+    </span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
