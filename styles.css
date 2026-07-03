@@ -151,6 +151,13 @@ p{ color:var(--ink); }
 .card a.media{ transition:transform .25s ease; }
 .card a.media:hover{ transform:translateY(-3px); }
 
+/* ---------------- experiments mini grid ---------------- */
+.grid--mini{ grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.2vw,26px); }
+.grid--mini .media{ aspect-ratio:4/3; }
+.grid--mini .card__title{ font-size:15.5px; }
+.grid--mini .card__desc{ font-size:13.5px; margin:4px 0 0; }
+@media (max-width:760px){ .grid--mini{ grid-template-columns:1fr; } }
+
 /* ---------------- spec stats ---------------- */
 .specs{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:26px 0; }
 .spec{ border-top:2px solid var(--ink); padding-top:10px; }
