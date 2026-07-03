@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yu-Ting (Harry) Liao — CV</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#141414; --muted:#6b6b6b; --faint:#9a9a98;
+    --line:#e6e5e2; --line-2:#d9d8d4;
+    --sans:"Archivo",system-ui,sans-serif;
+    --head:"Space Grotesk","Archivo",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#fff; color:var(--ink); }
+  body{
+    font-family:var(--sans); font-size:9.6pt; line-height:1.5;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .page{ max-width:186mm; margin:0 auto; padding:14mm 0 10mm; }
+  @media screen{ .page{ padding:14mm 16px 40px; } }
+
+  /* header */
+  .head{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; }
+  h1{ font-family:var(--head); font-weight:500; font-size:21pt; letter-spacing:-0.02em; line-height:1.05; }
+  .head__id{ font-family:var(--mono); font-size:7.8pt; color:var(--muted); margin-top:5pt; letter-spacing:.02em; }
+  .head__links{ text-align:right; font-family:var(--mono); font-size:7.8pt; line-height:1.9; }
+  .head__links a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-2); }
+
+  /* sections */
+  section{ margin-top:13pt; }
+  h2{
+    font-family:var(--mono); font-weight:500; font-size:7.5pt;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--faint);
+    border-bottom:1px solid var(--line); padding-bottom:3pt; margin-bottom:7pt;
+  }
+  .about{ font-size:9.8pt; line-height:1.55; color:var(--ink); max-width:64ch; }
+  .about strong{ font-weight:500; }
+
+  /* generic row: left meta / right body */
+  .row{ display:grid; grid-template-columns:30mm 1fr; gap:6mm; padding:4.5pt 0; }
+  .row + .row{ border-top:1px solid var(--line); }
+  .row__when{ font-family:var(--mono); font-size:7.6pt; color:var(--faint); padding-top:1.5pt; }
+  .row__title{ font-family:var(--head); font-weight:500; font-size:10.3pt; letter-spacing:-0.01em; }
+  .row__title .where{ font-family:var(--sans); font-weight:400; font-size:9pt; color:var(--muted); }
+  .row__desc{ color:var(--muted); margin-top:1.5pt; max-width:66ch; }
+  .row__desc strong{ color:var(--ink); font-weight:500; }
+  .row__tech{ font-family:var(--mono); font-size:7.4pt; color:var(--faint); margin-top:2.5pt; letter-spacing:.01em; }
+  .row__desc a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-2); }
+
+  /* skills */
+  .skills{ display:grid; grid-template-columns:30mm 1fr; gap:2pt 6mm; }
+  .skills dt{ font-family:var(--mono); font-size:7.6pt; color:var(--faint); padding-top:2pt; }
+  .skills dd{ color:var(--ink); padding:1.5pt 0; }
+
+  .foot-note{ margin-top:14pt; font-family:var(--mono); font-size:7pt; color:var(--faint); }
+
+  @page{ size:A4; margin:0; }
+  @media print{
+    .page{ padding:14mm 12mm 12mm; max-width:none; }
+    a{ color:var(--ink) !important; }
+    .row{ break-inside:avoid; }
+    h2{ break-after:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div>
+      <h1>Yu-Ting (Harry) Liao</h1>
+      <div class="head__id">designer &amp; computational artist — the body as an interface</div>
+    </div>
+    <div class="head__links">
+      <a href="mailto:yvw.liao@gmail.com">yvw.liao@gmail.com</a><br />
+      <a href="https://yvwhy.github.io">yvwhy.github.io</a><br />
+      <a href="https://github.com/yvwHY">github.com/yvwHY</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="about">
+      I design <strong>the body as an interface</strong> — wearable instruments, embodied sound, and real-time
+      AI systems that let a person extend, feel, and learn through their own body. My path runs from fashion
+      pattern-cutting (UAL) through generative-AI media to computational arts, grounded in professional
+      visual-design practice in Taipei (2020–25). Current focus: <strong>Solo Choir</strong>, a wearable
+      instrument that turns one singer into a choir.
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="row">
+      <div class="row__when">2025 — 26</div>
+      <div>
+        <div class="row__title">MA Computational Arts <span class="where">— Goldsmiths, University of London (expected Sep 2026)</span></div>
+        <div class="row__desc">Physical computing, embodied interaction, real-time audio-visual systems. Thesis: <strong>Solo Choir</strong> (below).</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2022 — 24</div>
+      <div>
+        <div class="row__title">MA Digital Multimedia Arts <span class="where">— Shih Hsin University, Taipei</span></div>
+        <div class="row__desc">Thesis: generative-AI NPCs — a GPT-4 dialogue system in Unreal Engine 5 integrating speech recognition, synthesis, and sentiment analysis for real-time, context-aware interaction.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2016 — 19</div>
+      <div>
+        <div class="row__title">BA Fashion Pattern Cutting <span class="where">— University of the Arts London</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected projects</h2>
+    <div class="row">
+      <div class="row__when">2026</div>
+      <div>
+        <div class="row__title">Solo Choir <span class="where">— MA thesis · wearable instrument</span></div>
+        <div class="row__desc">Turns one singer into a choir: diatonic SATB harmony re-synthesised in the singer's <strong>own voice</strong>, delivered into the body via open-ear bone conduction (learning) and performed from it as a simultaneous chord (surface exciters). Real-time neural voice conversion on CPU, ~47 ms. Research question: does sending harmony <em>into / from</em> the body change how singers learn and perform it, versus harmony mediated by screens or speakers? <a href="https://yvwhy.github.io/solo-choir.html">case study →</a></div>
+        <div class="row__tech">neural voice conversion · real-time DSP · bone conduction · hardware prototyping</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2026</div>
+      <div>
+        <div class="row__title">Choir of Three (and One) <span class="where">— sound / AI</span></div>
+        <div class="row__desc">A DDSP model trained on ~10 minutes of my own singing performs three parts of a Bach chorale; the AI yields to silence when I hold my own part — a study in mutual yielding as the core of choral practice.</div>
+        <div class="row__tech">DDSP · Tone.js · ml5.js · p5.js</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2026</div>
+      <div>
+        <div class="row__title">Fabri-Form <span class="where">— robotics</span></div>
+        <div class="row__desc">A robotic interface for pattern-cutting: a multimodal LLM reads a hand-drawn sketch, generates 2D cutting paths, and a Pico-driven laser traces them onto fabric.</div>
+        <div class="row__tech">multimodal LLM · Raspberry Pi Pico · laser</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2025</div>
+      <div>
+        <div class="row__title">The Bonnet <span class="where">— wearable</span></div>
+        <div class="row__desc">An anti-surveillance headpiece: a custom-trained YOLOv8 model spots a CCTV camera and a servo drops a fabric veil over the face — reclaiming the gaze.</div>
+        <div class="row__tech">YOLOv8 · OpenCV · Arduino</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2025</div>
+      <div>
+        <div class="row__title">Gesture-Float <span class="where">— hardware</span></div>
+        <div class="row__desc">A wireless flying unit steered by the arm: an arm-mounted Pico W streams hand pitch and roll over Wi-Fi to a helium balloon unit, hand-soldered for stable, organic flight.</div>
+        <div class="row__tech">Pico W · UDP · PCB · soldering</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2025</div>
+      <div>
+        <div class="row__title">Draping Duet <span class="where">— performance</span></div>
+        <div class="row__desc">A real-time audiovisual installation reframing fashion draping as choreography — StreamDiffusion turns the atelier into flowing silk while a microphone amplifies the friction of the cloth.</div>
+        <div class="row__tech">StreamDiffusion · TouchDesigner · OBS</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Exhibitions</h2>
+    <div class="row">
+      <div class="row__when">2026</div>
+      <div>
+        <div class="row__title">Pop-Up · Harmonizing! <span class="where">— PSH Atrium, Goldsmiths, London</span></div>
+        <div class="row__desc">Exhibited a live vocal-harmony instrument; also designed the show's graphics and caption cards for all 37 works.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="row">
+      <div class="row__when">2024 — 25</div>
+      <div>
+        <div class="row__title">Visual Designer <span class="where">— Nice Crush Design House, Taipei</span></div>
+        <div class="row__desc">Digital advertising, social graphics, packaging; cohesive visual communication across online and offline campaigns.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2021 — 22</div>
+      <div>
+        <div class="row__title">Visual Designer <span class="where">— Digibionic, Taipei</span></div>
+        <div class="row__desc">Brand-marketing visual assets; marketing materials, promotions, and product logistics.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">2020 — 21</div>
+      <div>
+        <div class="row__title">Graphic Designer <span class="where">— AY-AY International, Taipei</span></div>
+        <div class="row__desc">Graphic assets and layouts across multimedia projects; produced and maintained style guides.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>physical computing</dt><dd>Raspberry Pi Pico W, Arduino, servo/motor control, circuit soldering, sensor fusion</dd>
+      <dt>creative code</dt><dd>p5.js, Tone.js, ml5.js, TouchDesigner, Web Audio API, JavaScript</dd>
+      <dt>machine learning</dt><dd>YOLOv8, OpenCV, Python, DDSP, neural voice conversion, dataset curation (Roboflow)</dd>
+      <dt>3d / game engine</dt><dd>Unreal Engine 5, Unity</dd>
+      <dt>design</dt><dd>Adobe Illustrator, Photoshop, InDesign, After Effects; pattern cutting &amp; garment construction</dd>
+    </dl>
+  </section>
+
+  <p class="foot-note">references and full documentation available on request · yvwhy.github.io</p>
+
+</div>
+</body>
+</html>
