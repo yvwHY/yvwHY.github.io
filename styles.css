@@ -221,3 +221,9 @@ p{ color:var(--ink); }
 .modes li .n{ font-family:var(--head); color:var(--ink); }
 @media (max-width:760px){ .modes li{ grid-template-columns:28px 1fr; } .modes li span:last-child{ grid-column:2; } }
 .hero__media .media{ border-radius:0; }
+
+/* 2026-09-15 spacing: tighter hero→work, clearer head→cards, feature→rest */
+.hero{ padding-bottom:clamp(20px,3vw,36px); }
+#work{ padding-top:clamp(28px,4vw,52px); }
+.section-head{ margin-bottom:clamp(28px,3.5vw,44px); }
+.card--feature{ margin-bottom:clamp(10px,2.5vw,30px); }
