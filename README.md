@@ -20,27 +20,14 @@ cd site
 python3 -m http.server 8000      # then open http://localhost:8000
 ```
 
-## Replace the placeholders (the only thing left to do)
-Every grey block is a placeholder with a mono caption naming the file it expects.
-
-1. **Add a `media/` folder** and drop your files in. Suggested names match the captions:
-   `solo-choir-hero.mp4`, `solo-choir-cover.mp4`, `choir-of-three.mp4`, `bonnet.mp4`,
-   `fabri-form.mp4`, `gesture-float.mp4`, `infolution.mp4`, `draping-duet.mp4`, `popup.jpg`,
-   `sc-hero.mp4`, `sc-loop.mp4`, `sc-studio.mp4`, `sc-rig.jpg`, and `process/01.jpg …`.
-2. **To show a video**, replace the placeholder's inner caption with a tag, e.g.:
-   ```html
-   <span class="media">
-     <video src="media/choir-of-three.mp4" autoplay muted loop playsinline></video>
-   </span>
-   ```
-   or embed Vimeo/YouTube:
-   ```html
-   <span class="media"><iframe src="https://player.vimeo.com/video/1176254975" allow="autoplay; fullscreen" allowfullscreen></iframe></span>
-   ```
-3. **To show an image**: `<span class="media"><img src="media/sc-rig.jpg" alt="The rig" /></span>`
-4. **CV**: drop `cv.pdf` in this folder (the Download CV button points to it).
-
-Tip: keep videos short, muted, looping, and compressed (H.264 .mp4, < ~5 MB each) so the page stays fast.
+## Status (2026-09-15)
+- `media/` holds the Solo Choir stills (`sc-*.jpg`) and an Infolution screenshot; all other project videos are Vimeo embeds.
+- Solo Choir hero on both pages = Vimeo 1223687812 (public). Case study rewritten to match the submitted thesis: tabletop instrument + two wearable prototypes; no latency figures.
+- `cv.html` mirrors the master `PhD/Material/01_CV/YuTingLiao_CV.docx`; `cv.pdf` is generated from it with headless Chrome:
+  ```bash
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --no-pdf-header-footer --print-to-pdf="$PWD/cv.pdf" "file://$PWD/cv.html"
+  ```
+- Still placeholder: the Bye Default (Pop-Up) card has no image. The Experiments section is commented out in `index.html` until there is content.
 
 ## Edit content
 All copy lives directly in the two HTML files (sections are commented). Colours, type and spacing are in `styles.css` `:root`.

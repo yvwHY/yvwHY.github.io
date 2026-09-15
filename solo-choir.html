@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Solo Choir — a wearable instrument that turns one singer into a choir</title>
-<meta name="description" content="Solo Choir: a real-time wearable instrument that turns one singer into a diatonic SATB choir in their own voice. The body as an interface for harmony — learned into the body, performed from it." />
+<title>Solo Choir — a vocal instrument that turns one singer into a choir</title>
+<meta name="description" content="Solo Choir: a real-time vocal instrument that answers one singer with soprano, alto, tenor and bass, generated live by neural voice models. A tabletop instrument with two wearable prototypes for feeling harmony in the body. MA Computational Arts thesis, Goldsmiths 2026." />
 <meta property="og:title" content="Solo Choir" />
-<meta property="og:description" content="A wearable instrument that turns one singer into a choir, in their own voice." />
+<meta property="og:description" content="A vocal instrument that turns one singer into a choir, in real time, on a laptop CPU." />
+<meta property="og:image" content="https://yvwhy.github.io/media/sc-key.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
@@ -20,9 +21,10 @@
     <button class="nav__toggle" aria-label="Menu" aria-expanded="false">menu</button>
     <nav class="nav__links" id="menu">
       <a href="#instrument">instrument</a>
-      <a href="#studio">studio</a>
+      <a href="#wearables">wearables</a>
       <a href="#making">making</a>
       <a href="#research">research</a>
+      <a href="#show">exhibition</a>
       <a href="index.html">index</a>
     </nav>
   </div>
@@ -33,22 +35,28 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <p class="kicker reveal">MA Computational Arts thesis · Goldsmiths · 2026 — mashup: throat mic + neural voice + bone conduction</p>
+      <p class="kicker reveal">MA Computational Arts thesis · Goldsmiths · 2026 · shown at Scream, Unsynced (degree show, Aug 2026)</p>
       <h1 class="hero__statement reveal">Solo Choir</h1>
-      <p class="lead reveal" style="margin-top:18px;">A wearable instrument that turns <strong>one singer</strong> into a choir — diatonic SATB harmony, re-synthesised in your <span class="dim">own voice</span>, in real time, on a laptop CPU.</p>
+      <p class="lead reveal" style="margin-top:18px; max-width:38ch;">A vocal instrument that turns <strong>one singer</strong> into a choir. You sing, and the system answers with soprano, alto, tenor and bass, in real time, on a laptop CPU.</p>
       <div class="hero__media reveal">
         <span class="media media--wide">
-          <span class="media__center"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
-          <span class="media__label"><span class="mono">▶</span>&nbsp;hero loop — the rig + the live harmony &nbsp;·&nbsp; /media/sc-hero.mp4</span>
+          <iframe src="https://player.vimeo.com/video/1223687812?app_id=122963&amp;dnt=1&amp;title=0&amp;byline=0&amp;portrait=0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Solo Choir — demo video (2 min)"></iframe>
         </span>
       </div>
+      <p class="figcap reveal">demo, 2 min &nbsp;·&nbsp; <a class="link" href="https://vimeo.com/1223687812" target="_blank" rel="noopener">vimeo.com/1223687812</a> &nbsp;·&nbsp; <a class="link" href="https://github.com/yvwHY/solo-choir" target="_blank" rel="noopener">code on github</a></p>
     </div>
   </section>
 
-  <!-- RESEARCH QUESTION -->
+  <!-- THE QUESTION -->
   <section style="padding-top:0;">
     <div class="wrap">
-      <p class="lead reveal" style="max-width:34ch;">The body is the interface for harmony. The research question: does sending harmony <span class="dim">into</span> and <span class="dim">from</span> the body change how a singer <strong>learns</strong> and <strong>performs</strong> it — compared with a screen or a speaker?</p>
+      <div class="cols">
+        <p class="lead reveal" style="max-width:34ch;">It began with a question I had as a choir singer: <span class="dim">what would it take to sing every part myself?</span></p>
+        <div class="reveal">
+          <p class="prose">Three of the four parts are generated live by neural voice models trained on other voices. The fourth is your own voice, unconverted. They sing at the same time as you, from four speakers around you, or answer a finished phrase once you stop or press the button on the microphone.</p>
+          <p class="prose" style="margin-top:14px;">The instrument grows out of my earlier work with a DSP pitch-shift harmoniser and replaces its fixed intervals with distinct singing voices. It sits on a desk, with two modular worn elements: a bone-conduction headband and an exciter collar.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -58,93 +66,91 @@
       <div class="block reveal">
         <div class="block__body">
           <span class="num">01 — the instrument</span>
-          <h3>One body becomes a whole chord — at the same moment you sing.</h3>
-          <p class="prose">A personally-trained neural voice-conversion model re-synthesises your live voice and adds diatonically-correct harmony voices. The human voice is monophonic — one note at a time; Solo Choir lets a single body sound a <strong>simultaneous SATB chord</strong>. That simultaneity is the literal extension of the body — a <em>choir of one</em>.</p>
-          <p class="prose" style="margin-top:14px;">Two embodied modes of one idea:</p>
-          <p class="prose" style="margin-top:6px;"><strong>Learn in-body</strong> — open-ear bone conduction places an independent harmony target into your head while you still hear your own real voice, so you train the interval by feel. <strong>Perform from-body</strong> — the synthetic choir radiates from a small cup at your mouth and blends with your live voice, reading as one person.</p>
+          <h3>A table, four speakers, a head, a microphone. One shell, four ways to sing with it.</h3>
+          <p class="prose">Four 3D-printed horn speakers stand around a head model, each carrying one voice. A boom microphone with a physical button faces the singer. A laptop runs everything on CPU, with no GPU and no cloud. The performer switches between four modes with a single key, with no gap in the sound.</p>
+          <ul class="modes">
+            <li><span class="k">1</span><span class="n">Respond</span><span>sing a phrase, stop or press the button, and the choir answers with the phrase in four parts</span></li>
+            <li><span class="k">2</span><span class="n">Live</span><span>the harmony follows you as you sing, from a pre-rendered bank of sung notes, no model in the loop</span></li>
+            <li><span class="k">3</span><span class="n">Live + neural</span><span>the same bank, but every note in it was rendered by the neural voice models at startup, playback only</span></li>
+            <li><span class="k">4</span><span class="n">Live · neural</span><span>every harmony part converted by a neural model as you sing, the only mode with a model in the loop</span></li>
+          </ul>
           <div class="specs">
-            <div class="spec"><div class="spec__n">~47<small>&nbsp;ms</small></div><div class="spec__l">live latency</div></div>
-            <div class="spec"><div class="spec__n">4</div><div class="spec__l">SATB voices</div></div>
-            <div class="spec"><div class="spec__n">CPU</div><div class="spec__l">no GPU</div></div>
-            <div class="spec"><div class="spec__n">1</div><div class="spec__l">singer</div></div>
+            <div class="spec"><div class="spec__n">4</div><div class="spec__l">SATB parts</div></div>
+            <div class="spec"><div class="spec__n">16</div><div class="spec__l">voices in live mode</div></div>
+            <div class="spec"><div class="spec__n">4</div><div class="spec__l">horn speakers</div></div>
+            <div class="spec"><div class="spec__n">CPU</div><div class="spec__l">no GPU, no cloud</div></div>
           </div>
           <div class="tag-row">
-            <span class="tag">throat mic</span><span class="tag">neural voice conversion</span><span class="tag">DAEX cup</span><span class="tag">bone conduction</span>
-          </div>
-        </div>
-        <div class="block__media">
-          <span class="media media--tall">
-            <span class="media__center"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
-            <span class="media__label"><span class="mono">▶</span>&nbsp;the embodied loop &nbsp;·&nbsp; /media/sc-loop.mp4</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 — STUDIO -->
-  <section id="studio" style="background:var(--bg-soft);">
-    <div class="wrap">
-      <div class="block block--flip reveal">
-        <div class="block__media">
-          <span class="media">
-            <span class="media__label"><span class="mono">▶</span>&nbsp;dragging the harmony lines &nbsp;·&nbsp; /media/sc-studio.mp4</span>
-          </span>
-        </div>
-        <div class="block__body">
-          <span class="num">02 — the studio</span>
-          <h3>See, shape, and hear harmony — then sing it in your own voice.</h3>
-          <p class="prose">Hum a melody; the system transcribes it, auto-arranges voice-led SATB, and draws each voice as a <strong>draggable pitch-contour line</strong>. Reshape pitch, onset and duration freely; a light synth previews instantly, then the engine renders the edited score into a choir of your own voice — per-voice stems you can mix.</p>
-          <p class="prose" style="margin-top:14px;">The old fixed parallel harmony becomes a <strong>special case</strong> of an editable form — nothing lost, generalised. The hero shifts from low latency to <strong>compositional control over harmony</strong>.</p>
-          <div class="tag-row">
-            <span class="tag" style="border-color:var(--melody); color:var(--melody);">melody</span>
+            <span class="tag">neural voice conversion</span><span class="tag">note bank</span><span class="tag">boom mic + button</span><span class="tag">Pico · BLE</span>
             <span class="tag" style="border-color:var(--sop); color:var(--sop);">soprano</span>
             <span class="tag" style="border-color:var(--alto); color:var(--alto);">alto</span>
-            <span class="tag" style="border-color:var(--tenor); color:var(--tenor);">tenor</span>
+            <span class="tag" style="border-color:var(--tenor); color:var(--tenor);">tenor = you</span>
             <span class="tag" style="border-color:var(--bass); color:var(--bass);">bass</span>
           </div>
         </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/sc-key.jpg" alt="Solo Choir: a head model between four small horn speakers, wearing the bone-conduction headband and the paper-fibre collar" loading="lazy" /></span>
+          <p class="figcap">the tabletop instrument, with both wearables resting on the head model</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 — MAKING / HARDWARE -->
+  <!-- 02 — WEARABLES -->
+  <section id="wearables" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="block block--flip reveal">
+        <div class="block__media">
+          <div class="pair">
+            <span class="media"><img src="media/sc-band.jpg" alt="Bone-conduction headband: a hand-bent brass rod with a small transducer at each end" loading="lazy" /></span>
+            <span class="media"><img src="media/sc-collar.jpg" alt="Exciter collar: a paper-fibre wrapped auxetic form with wiring, resting on a table" loading="lazy" /></span>
+          </div>
+          <p class="figcap">left: bone-conduction headband &nbsp;·&nbsp; right: exciter collar</p>
+        </div>
+        <div class="block__body">
+          <span class="num">02 — the wearables</span>
+          <h3>Two worn prototypes that let the harmony be felt on the body.</h3>
+          <p class="prose"><strong>Bone-conduction headband.</strong> A hand-bent brass rod with printed clamps and one bone-conduction driver on each side. It seats a harmony part on the skull while both ears stay open, so you still hear your own real voice and the room.</p>
+          <p class="prose" style="margin-top:14px;"><strong>Exciter collar.</strong> A dog-bone form in a 3D-printed auxetic lattice, a solid disc under each surface exciter, one U-shaped brass tube across, wound over in paper fibre. It hangs in the hollow between neck and shoulder, not against the throat. Bystanders hear it, the wearer hears it, and the wearer feels the chord as vibration.</p>
+          <p class="prose" style="margin-top:14px;">Both were shown next to the table, on the head model, as the embodied direction of the same instrument.</p>
+          <div class="tag-row">
+            <span class="tag">bone conduction</span><span class="tag">surface exciter</span><span class="tag">auxetic lattice · PLA</span><span class="tag">brass rod</span><span class="tag">paper fibre</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — MAKING -->
   <section id="making">
     <div class="wrap">
       <div class="block reveal">
         <div class="block__body">
           <span class="num">03 — the making</span>
-          <h3>A hand-built rig: a wire armature wrapped in paper fibre.</h3>
-          <p class="prose">The wearable is built by hand — a bent-wire skeleton wrapped in stiffened paper fibre, in the lineage of body-extension sculpture rather than a clean 3D print. The mouth cup stays rigid and light so a surface exciter can radiate the choir; the throat mic and bone-conduction transducer are mechanically isolated so the rig never feeds back on itself.</p>
-          <p class="prose" style="margin-top:14px;"><strong>Test A — feedback / self-stacking:</strong> passed by ear. Worn and sung through, the bone-conduction-out + throat-mic-in loop survives with no ring and no gradual self-stacking. <strong>Test B</strong> confirmed a surface exciter can't usefully radiate <em>through</em> tissue — so perform-mode commits to the cup as a spatial source at the mouth. Honest engineering: full simultaneous SATB is offline-rendered; live runs two to three voices on CPU.</p>
+          <h3>Printed, soldered, wound and modelled by hand.</h3>
+          <p class="prose">Every sounding part is built rather than bought. Four printed horn speakers with LED strips. Two hand-soldered amplifier units, each a LiPo cell, a charger, a boost converter and a PAM8403 amplifier around a Raspberry Pi Pico. Every unit shares one JST connector, so any speaker, headband or collar plugs into any amplifier. The microphone shell is the third printed version.</p>
+          <p class="prose" style="margin-top:14px;">The collar and headband were modelled in Fusion 360 on a body model, and an auxetic test coupon was printed before the full form was committed. The button talks to the laptop over Bluetooth with no pairing step, with a wired fallback.</p>
+          <p class="prose" style="margin-top:14px;"><strong>Method.</strong> The ear decides, measurement guards against regression. Every change was judged by blind, level-matched listening, and the dead ends are kept in a registry inside the repo. One example: two 8-singer models were trained for thicker harmony, but blind listening could not tell them from detuned copies of one voice, so the copies shipped and the models did not.</p>
           <div class="tag-row">
-            <span class="tag">wire + paper fibre</span><span class="tag">DAEX25CT-4 exciter</span><span class="tag">Dayton BCE-1</span><span class="tag">PAM8403</span><span class="tag">Raspberry Pi Pico W</span>
+            <span class="tag">3D-printed horns</span><span class="tag">PAM8403 · LiPo</span><span class="tag">Raspberry Pi Pico</span><span class="tag">Fusion 360</span><span class="tag">blind listening</span>
           </div>
         </div>
         <div class="block__media">
-          <span class="media media--tall">
-            <span class="media__label"><span class="mono">▦</span>&nbsp;the rig &nbsp;·&nbsp; /media/sc-rig.jpg</span>
-          </span>
+          <span class="media media--tall"><img src="media/sc-fusion.jpg" alt="Fusion 360 model of the collar and headband placed on a scanned head and shoulders" loading="lazy" /></span>
+          <p class="figcap">collar and headband modelled on a body in Fusion 360</p>
         </div>
       </div>
 
       <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
-        <p class="kicker" style="margin-bottom:12px;">7 months of making — bench tests · training · the build</p>
+        <p class="kicker" style="margin-bottom:12px;">seven months of making — bench tests · training · the build</p>
         <div class="wall">
-          <span class="media"><span class="media__label">01</span></span>
-          <span class="media"><span class="media__label">02</span></span>
-          <span class="media"><span class="media__label">03</span></span>
-          <span class="media"><span class="media__label">04</span></span>
-          <span class="media"><span class="media__label">05</span></span>
-          <span class="media"><span class="media__label">06</span></span>
-          <span class="media"><span class="media__label">07</span></span>
-          <span class="media"><span class="media__label">08</span></span>
-          <span class="media"><span class="media__label">09</span></span>
-          <span class="media"><span class="media__label">10</span></span>
-          <span class="media"><span class="media__label">11</span></span>
-          <span class="media"><span class="media__label">12</span></span>
+          <span class="media"><img src="media/sc-speakers.jpg" alt="Four printed horn speakers wired to their amplifier units" loading="lazy" /></span>
+          <span class="media"><img src="media/sc-process.jpg" alt="A hand-soldered amplifier unit with battery, charger, boost converter and audio jack" loading="lazy" /></span>
+          <span class="media"><img src="media/sc-collar-structure.jpg" alt="The auxetic lattice cut of the collar, with a solid disc at each end for the exciters" loading="lazy" /></span>
+          <span class="media"><img src="media/sc-mesh.jpg" alt="Printed auxetic mesh test coupon" loading="lazy" /></span>
+          <span class="media"><img src="media/sc-install.jpg" alt="The installation lit at night: head model, boom microphone and laptop reading SING" loading="lazy" /></span>
+          <span class="media"><img src="media/sc-show-3.jpg" alt="A visitor at the Solo Choir table during the degree show" loading="lazy" /></span>
         </div>
-        <p class="kicker" style="margin-top:12px;">drop process images in /media/process/ and swap these tiles</p>
       </div>
     </div>
   </section>
@@ -152,21 +158,34 @@
   <!-- 04 — RESEARCH -->
   <section id="research" style="background:var(--bg-soft);">
     <div class="wrap">
-      <div class="section-head reveal"><h2>04 — research &amp; contribution</h2><span class="kicker">from demo to research</span></div>
+      <div class="section-head reveal"><h2>04 — research &amp; honesty</h2><span class="kicker">where it stands</span></div>
       <div class="cols">
         <div class="reveal">
-          <p class="lead">The contribution is the <span class="dim">integration</span>: live, per-voice neural SATB harmony, in the singer's own voice, on CPU, with an editable score — delivered through the body.</p>
-          <p class="prose" style="margin-top:20px;">Each ingredient has prior art — real-time diatonic harmonisers, one-singer-to-his-own-voices instruments, neural voice conversion, wearable vocal controllers — but no single system combines them, and none delivers an independent harmony target <em>into</em> the head to learn a part. That embodied-delivery claim is framed as a hypothesis to be tested, not a settled result.</p>
+          <p class="lead">The claim is the <span class="dim">integration</span>: one singer, four distinct singing voices answering in real time on a laptop, with the harmony delivered to the body as well as the room.</p>
+          <p class="prose" style="margin-top:20px;">Each ingredient has prior art: real-time harmonisers, one-singer instruments, neural voice conversion, wearable sound. What is new is putting them in one instrument that a visitor can use within seconds, and extending it onto the body. The embodied claim, that feeling a part helps you learn it, is a hypothesis I have not yet tested.</p>
         </div>
         <div class="reveal">
           <ul class="facts">
-            <li><span>evaluation</span><span>bone conduction vs headphones vs speaker — which lets a singer hold a harmony part fastest and most in-tune (pitch-error telemetry; pilot)</span></li>
-            <li><span>baseline</span><span>naive code pitch-shift vs neural re-synthesis — A/B, no human subjects</span></li>
-            <li><span>positioning</span><span>vocoder / talkbox lineage · Collier–Bloomberg harmoniser · Cococo · Holly+ · body-as-interface sound art</span></li>
-            <li><span>honesty</span><span>live = 2–3 voices; full SATB = offline render. Liveness, not low latency, is the point.</span></li>
+            <li><span>lineage</span><span>Smart Vocal Harmonizer (DSP pitch shift) → Choir of Three (DDSP, one voice) → Solo Choir (four neural voices, live)</span></li>
+            <li><span>voices</span><span>soprano and bass trained on the open M4Singer dataset; alto trained on a friend's voice with consent, kept anonymous; tenor is the singer, unconverted</span></li>
+            <li><span>boundary</span><span>the instrument is gated by microphone level, so it cannot tell singing from speech. Talk to the audience and the choir answers you. This is printed on the visitor card.</span></li>
+            <li><span>not done yet</span><span>no participant study. The learning study (bone conduction vs headphones) was cut before the viva and is the next piece of work.</span></li>
+            <li><span>code</span><span>MIT-licensed, models excluded for licence and privacy reasons. <a class="link" href="https://github.com/yvwHY/solo-choir" target="_blank" rel="noopener">github.com/yvwHY/solo-choir ↗</a></span></li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 05 — EXHIBITION -->
+  <section id="show">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>05 — exhibition</h2><span class="kicker">Scream, Unsynced · MA Computational Arts Festival 2026 · St James Hatcham Building, Goldsmiths · 27–29 Aug 2026</span></div>
+      <div class="grid reveal">
+        <span class="media"><img src="media/sc-show-1.jpg" alt="A visitor singing into the boom microphone at the Solo Choir table" loading="lazy" /></span>
+        <span class="media"><img src="media/sc-show-2.jpg" alt="Yu-Ting Liao showing a visitor the wearables on the head model" loading="lazy" /></span>
+      </div>
+      <p class="figcap reveal">visitors sang, talked, and were answered. Three days at one table.</p>
     </div>
   </section>
 
@@ -177,8 +196,9 @@
     <span class="foot__note">Solo Choir — Yu-Ting (Harry) Liao · Goldsmiths 2026 · supervisor Daniel Berio</span>
     <span style="display:flex; gap:24px;">
       <a href="index.html">← all work</a>
+      <a href="https://vimeo.com/1223687812" target="_blank" rel="noopener">vimeo</a>
+      <a href="https://github.com/yvwHY/solo-choir" target="_blank" rel="noopener">github</a>
       <a href="mailto:yvw.liao@gmail.com">email</a>
-      <a href="https://github.com/yvwHY" target="_blank" rel="noopener">github</a>
     </span>
   </div>
 </footer>

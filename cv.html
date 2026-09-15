@@ -43,18 +43,19 @@
   .about strong{ font-weight:500; }
 
   /* generic row: left meta / right body */
-  .row{ display:grid; grid-template-columns:30mm 1fr; gap:6mm; padding:4.5pt 0; }
+  .row{ display:grid; grid-template-columns:34mm 1fr; gap:6mm; padding:4.5pt 0; }
   .row + .row{ border-top:1px solid var(--line); }
-  .row__when{ font-family:var(--mono); font-size:7.6pt; color:var(--faint); padding-top:1.5pt; }
+  .row__when{ font-family:var(--mono); font-size:7.2pt; color:var(--faint); padding-top:1.5pt; }
   .row__title{ font-family:var(--head); font-weight:500; font-size:10.3pt; letter-spacing:-0.01em; }
   .row__title .where{ font-family:var(--sans); font-weight:400; font-size:9pt; color:var(--muted); }
-  .row__desc{ color:var(--muted); margin-top:1.5pt; max-width:66ch; }
+  .row__desc{ color:var(--muted); margin-top:1.5pt; max-width:70ch; }
+  .row__desc + .row__desc{ margin-top:3pt; }
   .row__desc strong{ color:var(--ink); font-weight:500; }
   .row__tech{ font-family:var(--mono); font-size:7.4pt; color:var(--faint); margin-top:2.5pt; letter-spacing:.01em; }
   .row__desc a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-2); }
 
   /* skills */
-  .skills{ display:grid; grid-template-columns:30mm 1fr; gap:2pt 6mm; }
+  .skills{ display:grid; grid-template-columns:34mm 1fr; gap:2pt 6mm; }
   .skills dt{ font-family:var(--mono); font-size:7.6pt; color:var(--faint); padding-top:2pt; }
   .skills dd{ color:var(--ink); padding:1.5pt 0; }
 
@@ -74,8 +75,8 @@
 
   <header class="head">
     <div>
-      <h1>Yu-Ting (Harry) Liao</h1>
-      <div class="head__id">designer &amp; computational artist — the body as an interface</div>
+      <h1>Yu-Ting Liao (Harry)</h1>
+      <div class="head__id">computational artist &amp; designer — the body as an interface</div>
     </div>
     <div class="head__links">
       <a href="mailto:yvw.liao@gmail.com">yvw.liao@gmail.com</a><br />
@@ -85,88 +86,72 @@
   </header>
 
   <section>
-    <h2>Profile</h2>
+    <h2>About</h2>
     <p class="about">
-      I design <strong>the body as an interface</strong> — wearable instruments, embodied sound, and real-time
-      AI systems that let a person extend, feel, and learn through their own body. My path runs from fashion
-      pattern-cutting (UAL) through generative-AI media to computational arts, grounded in professional
-      visual-design practice in Taipei (2020–25). Current focus: <strong>Solo Choir</strong>, a wearable
-      instrument that turns one singer into a choir.
+      Computational artist and designer working on <strong>the body as an interface</strong>, across embodied sound,
+      wearable and tabletop instruments, and real-time voice AI. Completed the MA Computational Arts at Goldsmiths
+      in 2026 with <strong>Solo Choir</strong>, a real-time instrument that turns one singer into a choir in their own
+      voice. Trained in fashion pattern cutting at UAL and in generative-AI media at Shih Hsin University, with five
+      years of professional visual design experience in Taipei. Works across hardware prototyping, machine learning
+      and creative code.
     </p>
   </section>
 
   <section>
     <h2>Education</h2>
     <div class="row">
-      <div class="row__when">2025 — 26</div>
+      <div class="row__when">Sep 2025 — Sep 2026</div>
       <div>
-        <div class="row__title">MA Computational Arts <span class="where">— Goldsmiths, University of London (expected Sep 2026)</span></div>
-        <div class="row__desc">Physical computing, embodied interaction, real-time audio-visual systems. Thesis: <strong>Solo Choir</strong> (below).</div>
+        <div class="row__title">MA in Computational Arts <span class="where">— Goldsmiths, University of London</span></div>
+        <div class="row__desc">Thesis project: <strong>Solo Choir</strong> (see Research &amp; Projects). Viva Aug 2026; final award expected Oct 2026.</div>
+        <div class="row__desc">Physical computing, embodied interaction, real-time audio and machine learning for creative practice (Raspberry Pi Pico, Arduino, Python, p5.js, Tone.js, TouchDesigner).</div>
       </div>
     </div>
     <div class="row">
-      <div class="row__when">2022 — 24</div>
+      <div class="row__when">Sep 2022 — Jul 2024</div>
       <div>
-        <div class="row__title">MA Digital Multimedia Arts <span class="where">— Shih Hsin University, Taipei</span></div>
-        <div class="row__desc">Thesis: generative-AI NPCs — a GPT-4 dialogue system in Unreal Engine 5 integrating speech recognition, synthesis, and sentiment analysis for real-time, context-aware interaction.</div>
+        <div class="row__title">MA in Digital Multimedia Arts <span class="where">— Shih Hsin University, Taipei</span></div>
+        <div class="row__desc">Graduate thesis: <em>Technology Inside AI Game Development and Application: An Example of Generative AI NPC</em>. Developed an AI NPC dialogue system in Unreal Engine 5.2 using GPT-4, integrating speech recognition, synthesis and sentiment analysis for context-aware, real-time NPC interaction.</div>
       </div>
     </div>
     <div class="row">
-      <div class="row__when">2016 — 19</div>
+      <div class="row__when">Sep 2016 — Jun 2019</div>
       <div>
-        <div class="row__title">BA Fashion Pattern Cutting <span class="where">— University of the Arts London</span></div>
+        <div class="row__title">BA in Fashion Pattern Cutting <span class="where">— University of the Arts London</span></div>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Selected projects</h2>
+    <h2>Research &amp; selected projects</h2>
     <div class="row">
       <div class="row__when">2026</div>
       <div>
-        <div class="row__title">Solo Choir <span class="where">— MA thesis · wearable instrument</span></div>
-        <div class="row__desc">Turns one singer into a choir: diatonic SATB harmony re-synthesised in the singer's <strong>own voice</strong>, delivered into the body via open-ear bone conduction (learning) and performed from it as a simultaneous chord (surface exciters). Real-time neural voice conversion on CPU, ~47 ms. Research question: does sending harmony <em>into / from</em> the body change how singers learn and perform it, versus harmony mediated by screens or speakers? <a href="https://yvwhy.github.io/solo-choir.html">case study →</a></div>
-        <div class="row__tech">neural voice conversion · real-time DSP · bone conduction · hardware prototyping</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="row__when">2026</div>
-      <div>
-        <div class="row__title">Choir of Three (and One) <span class="where">— sound / AI</span></div>
-        <div class="row__desc">A DDSP model trained on ~10 minutes of my own singing performs three parts of a Bach chorale; the AI yields to silence when I hold my own part — a study in mutual yielding as the core of choral practice.</div>
-        <div class="row__tech">DDSP · Tone.js · ml5.js · p5.js</div>
+        <div class="row__title">Solo Choir <span class="where">— MA thesis · real-time vocal instrument · Goldsmiths</span></div>
+        <div class="row__desc">Turns one singer into a choir: sing a phrase and the system answers with harmony voices re-synthesised in the singer's <strong>own voice</strong>, using real-time neural voice conversion on CPU.</div>
+        <div class="row__desc">Tabletop responsive instrument (four speakers, head model, boom microphone) shown with two wearable prototypes: an open-ear bone-conduction headband and an auxetic neck ring for feeling harmony in the body.</div>
+        <div class="row__tech">demo: <a href="https://vimeo.com/1223687812">vimeo.com/1223687812</a> &nbsp;·&nbsp; code: <a href="https://github.com/yvwHY/solo-choir">github.com/yvwHY/solo-choir</a> &nbsp;·&nbsp; <a href="https://yvwhy.github.io/solo-choir.html">case study</a></div>
       </div>
     </div>
     <div class="row">
       <div class="row__when">2026</div>
       <div>
-        <div class="row__title">Fabri-Form <span class="where">— robotics</span></div>
-        <div class="row__desc">A robotic interface for pattern-cutting: a multimodal LLM reads a hand-drawn sketch, generates 2D cutting paths, and a Pico-driven laser traces them onto fabric.</div>
-        <div class="row__tech">multimodal LLM · Raspberry Pi Pico · laser</div>
+        <div class="row__title">Fabri-Form <span class="where">— robotics · pattern cutting · Goldsmiths</span></div>
+        <div class="row__desc">A robotic pattern-cutting interface: a multimodal LLM reads a hand-drawn sketch, generates 2D cutting paths, and a Raspberry Pi Pico-driven laser traces them onto fabric.</div>
       </div>
     </div>
     <div class="row">
       <div class="row__when">2025</div>
       <div>
-        <div class="row__title">The Bonnet <span class="where">— wearable</span></div>
-        <div class="row__desc">An anti-surveillance headpiece: a custom-trained YOLOv8 model spots a CCTV camera and a servo drops a fabric veil over the face — reclaiming the gaze.</div>
-        <div class="row__tech">YOLOv8 · OpenCV · Arduino</div>
+        <div class="row__title">The Bonnet <span class="where">— wearable · computer vision · Goldsmiths</span></div>
+        <div class="row__desc">An anti-surveillance headpiece: a custom-trained YOLOv8 model detects a CCTV camera and an Arduino servo drops a fabric veil over the face.</div>
       </div>
     </div>
     <div class="row">
       <div class="row__when">2025</div>
       <div>
-        <div class="row__title">Gesture-Float <span class="where">— hardware</span></div>
-        <div class="row__desc">A wireless flying unit steered by the arm: an arm-mounted Pico W streams hand pitch and roll over Wi-Fi to a helium balloon unit, hand-soldered for stable, organic flight.</div>
-        <div class="row__tech">Pico W · UDP · PCB · soldering</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="row__when">2025</div>
-      <div>
-        <div class="row__title">Draping Duet <span class="where">— performance</span></div>
-        <div class="row__desc">A real-time audiovisual installation reframing fashion draping as choreography — StreamDiffusion turns the atelier into flowing silk while a microphone amplifies the friction of the cloth.</div>
-        <div class="row__tech">StreamDiffusion · TouchDesigner · OBS</div>
+        <div class="row__title">Gesture-Float <span class="where">— hardware · wireless control · Goldsmiths</span></div>
+        <div class="row__desc">A wireless flying unit steered by the arm: an arm-mounted Pico W streams hand pitch and roll over Wi-Fi (UDP) to a helium balloon unit, on hand-soldered circuits.</div>
       </div>
     </div>
   </section>
@@ -174,10 +159,17 @@
   <section>
     <h2>Exhibitions</h2>
     <div class="row">
-      <div class="row__when">2026</div>
+      <div class="row__when">Aug 2026</div>
       <div>
-        <div class="row__title">Pop-Up · Harmonizing! <span class="where">— PSH Atrium, Goldsmiths, London</span></div>
-        <div class="row__desc">Exhibited a live vocal-harmony instrument; also designed the show's graphics and caption cards for all 37 works.</div>
+        <div class="row__title">Scream, Unsynced <span class="where">— MA Computational Arts Festival 2026, Goldsmiths, London</span></div>
+        <div class="row__desc">Postgraduate degree show, St James Hatcham Building, 27–29 Aug 2026. Exhibited Solo Choir.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row__when">May 2026</div>
+      <div>
+        <div class="row__title">Bye Default <span class="where">— Computational Arts Pop-Up, PSH Atrium, Goldsmiths, London</span></div>
+        <div class="row__desc">Exhibited <em>Harmonizing!</em>, a browser-based live vocal-harmony instrument; designed the exhibition graphics and caption cards for all 37 works.</div>
       </div>
     </div>
   </section>
@@ -185,24 +177,24 @@
   <section>
     <h2>Experience</h2>
     <div class="row">
-      <div class="row__when">2024 — 25</div>
+      <div class="row__when">Sep 2023 — Jun 2025</div>
       <div>
         <div class="row__title">Visual Designer <span class="where">— Nice Crush Design House, Taipei</span></div>
-        <div class="row__desc">Digital advertising, social graphics, packaging; cohesive visual communication across online and offline campaigns.</div>
+        <div class="row__desc">Created visual assets, including digital advertisements, social media graphics, packaging and promotional materials. Developed marketing strategies to ensure cohesive visual communication across both online and offline platforms.</div>
       </div>
     </div>
     <div class="row">
-      <div class="row__when">2021 — 22</div>
+      <div class="row__when">Jan 2021 — Sep 2022</div>
       <div>
         <div class="row__title">Visual Designer <span class="where">— Digibionic, Taipei</span></div>
-        <div class="row__desc">Brand-marketing visual assets; marketing materials, promotions, and product logistics.</div>
+        <div class="row__desc">Designed and created visual assets for brand marketing. Managed marketing materials, promotions and product logistics. Supported marketing and operational tasks.</div>
       </div>
     </div>
     <div class="row">
-      <div class="row__when">2020 — 21</div>
+      <div class="row__when">Dec 2020 — Jun 2021</div>
       <div>
         <div class="row__title">Graphic Designer <span class="where">— AY-AY International, Taipei</span></div>
-        <div class="row__desc">Graphic assets and layouts across multimedia projects; produced and maintained style guides.</div>
+        <div class="row__desc">Created graphic assets and layouts for a wide mix of multimedia projects. Produced and maintained style guides.</div>
       </div>
     </div>
   </section>
@@ -210,15 +202,15 @@
   <section>
     <h2>Skills</h2>
     <dl class="skills">
-      <dt>physical computing</dt><dd>Raspberry Pi Pico W, Arduino, servo/motor control, circuit soldering, sensor fusion</dd>
-      <dt>creative code</dt><dd>p5.js, Tone.js, ml5.js, TouchDesigner, Web Audio API, JavaScript</dd>
-      <dt>machine learning</dt><dd>YOLOv8, OpenCV, Python, DDSP, neural voice conversion, dataset curation (Roboflow)</dd>
-      <dt>3d / game engine</dt><dd>Unreal Engine 5, Unity</dd>
-      <dt>design</dt><dd>Adobe Illustrator, Photoshop, InDesign, After Effects; pattern cutting &amp; garment construction</dd>
+      <dt>physical computing</dt><dd>Raspberry Pi Pico W, Arduino, servo/motor control, circuit soldering, sensor fusion, bone-conduction and surface-exciter audio</dd>
+      <dt>audio / machine learning</dt><dd>real-time neural voice conversion, DDSP, pitch detection, Web Audio API, YOLOv8, OpenCV, Python, custom dataset curation (Roboflow)</dd>
+      <dt>creative code</dt><dd>p5.js, Tone.js, ml5.js, TouchDesigner, JavaScript</dd>
+      <dt>3d / game engine</dt><dd>Unreal Engine 5, Unity, 3D computer graphics</dd>
+      <dt>design</dt><dd>Adobe Illustrator, Photoshop, InDesign, After Effects; pattern cutting and garment construction</dd>
     </dl>
   </section>
 
-  <p class="foot-note">references and full documentation available on request · yvwhy.github.io</p>
+  <p class="foot-note">references and full documentation available on request · yvwhy.github.io · updated Sep 2026</p>
 
 </div>
 </body>
