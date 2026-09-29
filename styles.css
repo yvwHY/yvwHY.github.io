@@ -296,7 +296,6 @@ html.lb-open .nav{ visibility:hidden; }
   .lb__nav{ top:auto; bottom:6px; transform:none; font-size:20px; }
   .lb__prev{ left:10px; } .lb__next{ right:10px; }
 }
-.wall--3{ grid-template-columns:repeat(3,1fr); }
-@media (max-width:760px){ .wall--3{ grid-template-columns:repeat(2,1fr); } }
-.fig-narrow{ max-width:820px; margin-inline:auto; }
-.fig-wide{ max-width:940px; margin-inline:auto; }
+.wall--2{ grid-template-columns:repeat(2,1fr); gap:10px; }
+.wall--2 .media{ aspect-ratio:4/3; }
+@media (max-width:760px){ .wall--2{ grid-template-columns:1fr; } }
