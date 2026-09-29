@@ -109,23 +109,21 @@
   <!-- 02 — THE FORM -->
   <section id="form" style="background:var(--bg-soft);">
     <div class="wrap">
-      <div class="block block--flip reveal">
-        <div class="block__body">
-          <span class="num">02 — the prompt is a form</span>
-          <h3>The model is not invited to interpret. It is asked to fill in a form.</h3>
-          <p class="prose">The browser sends the sketch to a small Python proxy as a base64 image inside a deliberately restrictive prompt. Instead of letting the model describe the garment in prose, the prompt specifies a JSON schema with seven fields — neckline style, neck depth, body length, sleeve length, ease, shoulder width, and one sentence of reasoning — and every numeric field carries an explicit minimum and maximum.</p>
-          <p class="prose" style="margin-top:14px;">That constraint is the argument. What Tocchetti and colleagues call <em>transparent guidance</em> is made literal here: six sliders expose every parameter the model inferred, and the designer can overrule any of them. <strong>Authorship stays with the person, not the inference.</strong></p>
-          <p class="prose" style="margin-top:14px;">The proxy itself is thin — it keeps the API key server-side, adds the CORS headers the endpoint does not provide, and answers a health check. Read another way, it is the file that names what the project does: <strong>it stands in for an absent figure, the pattern cutter, without becoming that figure.</strong></p>
+      <div class="section-head reveal"><h2>02 — the prompt is a form</h2><span class="kicker">what the model is allowed to say</span></div>
+      <div class="cols">
+        <div class="reveal">
+          <p class="lead">The model is not invited to interpret. <span class="dim">It is asked to fill in a form.</span></p>
+          <p class="prose" style="margin-top:22px;">The browser sends the sketch to a small Python proxy as a base64 image inside a deliberately restrictive prompt. Instead of letting the model describe the garment in prose, the prompt specifies a JSON schema with seven fields — neckline style, neck depth, body length, sleeve length, ease, shoulder width, and one sentence of reasoning — and every numeric field carries an explicit minimum and maximum.</p>
         </div>
-        <div class="block__media">
-          <span class="media media--contain" style="aspect-ratio:1400/1291;"><img src="media/ff-sketch.jpg" alt="A hand-drawn sketch of a long-sleeved top in blue pen on white paper" loading="lazy" /></span>
-          <p class="figcap">what gets sent — a sketch, drawn by hand, encoded and posted to the model</p>
+        <div class="reveal">
+          <p class="prose">That constraint is the argument. What Tocchetti and colleagues call <em>transparent guidance</em> is made literal here: six sliders expose every parameter the model inferred, and the designer can overrule any of them. <strong>Authorship stays with the person, not the inference.</strong></p>
+          <p class="prose" style="margin-top:14px;">The proxy itself is thin — it keeps the API key server-side, adds the CORS headers the endpoint does not provide, and answers a health check. Read another way, it is the file that names what the project does: <strong>it stands in for an absent figure, the pattern cutter, without becoming that figure.</strong></p>
         </div>
       </div>
 
       <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
         <span class="media media--contain" style="aspect-ratio:1076/312;"><img src="media/ff-prompt.jpg" alt="The prompt source: a JSON schema listing neckline, neck depth, body length, sleeve length, ease, shoulder width and reasoning, each with explicit bounds" loading="lazy" /></span>
-        <p class="figcap">the prompt — seven fields, each with a floor and a ceiling. A schema, not an invitation</p>
+        <p class="figcap">the prompt itself — seven fields, each with a floor and a ceiling. A schema, not an invitation</p>
       </div>
     </div>
   </section>
@@ -134,26 +132,38 @@
   <section id="friction">
     <div class="wrap">
       <div class="section-head reveal"><h2>03 — friction points</h2><span class="kicker">two failures worth keeping</span></div>
-      <div class="block reveal">
-        <div class="block__body">
+      <div class="cols reveal">
+        <div>
           <span class="num">the first</span>
-          <h3>The bug was in the translations I had assumed were mechanical.</h3>
+          <h3 style="font-family:var(--head); font-size:clamp(21px,2.6vw,30px); line-height:1.22; font-weight:500; letter-spacing:-0.02em; margin:12px 0 14px;">The bug was in the translations I had assumed were mechanical.</h3>
           <p class="prose">Early on the model read a sketch correctly and returned a crew neckline. The drawing came out with a V-neck. The fault was downstream — a default in the slider state was overriding the parsed value — and tracking it down was easy. What it left behind was not.</p>
-          <p class="prose" style="margin-top:14px;">I had been describing the pipeline as one translation, sketch to pattern. It is four: sketch to JSON, JSON to state, state to SVG, SVG to printed paper. The failure was not in the inference, which is the part everyone watches. It was in a handover I had assumed was plumbing.</p>
         </div>
-        <div class="block__media">
-          <span class="media media--contain"><img src="media/ff-online.jpg" alt="The interface status bar reading: API, proxy online, multimodal LLM, with a green indicator" loading="lazy" /></span>
-          <span class="media media--contain" style="margin-top:10px;"><img src="media/ff-offline.jpg" alt="The same status bar reading: API, proxy offline, preset mode, with a red indicator" loading="lazy" /></span>
-          <p class="figcap">the two states the interface will admit to being in</p>
+        <div>
+          <p class="prose">I had been describing the pipeline as one translation, sketch to pattern. It is four: sketch to JSON, JSON to state, state to SVG, SVG to printed paper. The failure was not in the inference, which is the part everyone watches. <strong>It was in a handover I had assumed was plumbing.</strong></p>
         </div>
       </div>
 
-      <div class="block reveal" style="margin-top:clamp(36px,5vw,64px);">
+      <div style="margin-top:clamp(28px,4vw,44px);" class="reveal">
+        <div class="flow">
+          <div class="flow__step"><div class="k">one</div><div class="n">Sketch → JSON</div><div class="d">the part everybody watches</div></div>
+          <div class="flow__step"><div class="k">two</div><div class="n">JSON → state</div><div class="d">where the bug actually was</div></div>
+          <div class="flow__step"><div class="k">three</div><div class="n">State → SVG</div><div class="d">assumed to be plumbing</div></div>
+          <div class="flow__step"><div class="k">four</div><div class="n">SVG → paper</div><div class="d">assumed to be plumbing</div></div>
+        </div>
+        <p class="figcap">one arc, four translations — the fragile one was not the first</p>
+      </div>
+
+      <div class="block block--flip reveal" style="margin-top:clamp(36px,5vw,64px);">
         <div class="block__body">
           <span class="num">the second</span>
           <h3>The fallback is the more honest version of the question.</h3>
           <p class="prose">The proxy ran on localhost during development. Once the front end was hosted, the browser could no longer reach it, and moving to a public host brought cold starts and timeouts with it. So I built a local fallback: if the proxy is unreachable, the interface offers preset sketches and a pixel-level heuristic that runs entirely in the browser.</p>
           <p class="prose" style="margin-top:14px;">That is not graceful degradation. <strong>The cutter the proxy stands in for is, in real life, frequently unreachable.</strong> The offline mode says what the project is about more plainly than the online one does.</p>
+        </div>
+        <div class="block__media">
+          <span class="media media--contain" style="aspect-ratio:712/232;"><img src="media/ff-online.jpg" alt="The interface status bar reading: API, proxy online, multimodal LLM, with a green indicator" loading="lazy" /></span>
+          <span class="media media--contain" style="margin-top:10px; aspect-ratio:704/234;"><img src="media/ff-offline.jpg" alt="The same status bar reading: API, proxy offline, preset mode, with a red indicator" loading="lazy" /></span>
+          <p class="figcap">reachable, and not — the two states the interface will admit to</p>
         </div>
       </div>
     </div>
