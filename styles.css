@@ -299,3 +299,4 @@ html.lb-open .nav{ visibility:hidden; }
 .wall--3{ grid-template-columns:repeat(3,1fr); }
 @media (max-width:760px){ .wall--3{ grid-template-columns:repeat(2,1fr); } }
 .fig-narrow{ max-width:820px; margin-inline:auto; }
+.fig-wide{ max-width:940px; margin-inline:auto; }
