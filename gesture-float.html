@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gesture-Float — a floating unit steered by the arm</title>
+<meta name="description" content="Gesture-Float: a wireless flying unit with embodied control. An arm-mounted Pico W streams hand pitch and roll over Wi-Fi to a helium balloon unit that answers with a servo and a fan. Physical Computing 2, MA Computational Arts, Goldsmiths 2026." />
+<meta property="og:title" content="Gesture-Float" />
+<meta property="og:description" content="A helium balloon unit steered by the tilt of a hand, over Wi-Fi, on hand-soldered circuits." />
+<meta property="og:image" content="https://yvwhy.github.io/media/gf-key.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__brand" href="index.html">← YU-TING&nbsp;LIAO</a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">menu</button>
+    <nav class="nav__links" id="menu">
+      <a href="#system">system</a>
+      <a href="#making">making</a>
+      <a href="#tilt">the tilt</a>
+      <a href="#limits">limits</a>
+      <a href="index.html">index</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker reveal">Physical Computing 2 · MA Computational Arts · Goldsmiths · 2026</p>
+      <h1 class="hero__statement reveal">Gesture-Float</h1>
+      <p class="lead reveal" style="margin-top:18px; max-width:40ch;">A floating unit steered by <strong>the tilt of a hand</strong>. No handset, no joystick — a board strapped to the forearm streams hand pitch and roll over Wi-Fi, and a helium balloon answers with a servo and a fan.</p>
+      <div class="hero__media reveal">
+        <span class="media">
+          <iframe src="https://player.vimeo.com/video/1176254975?app_id=122963&amp;dnt=1&amp;title=0&amp;byline=0&amp;portrait=0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Gesture-Float — video"></iframe>
+        </span>
+      </div>
+      <p class="figcap reveal">video, 2 min &nbsp;·&nbsp; <a class="link" href="https://vimeo.com/1176254975" target="_blank" rel="noopener">vimeo.com/1176254975</a></p>
+    </div>
+  </section>
+
+  <!-- THE QUESTION -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="cols">
+        <p class="lead reveal" style="max-width:32ch;">What if the controller stopped being <span class="dim">a thing you hold</span> and became something you wear?</p>
+        <div class="reveal">
+          <p class="prose">The project asks where the boundary between a body and a machine actually sits. A handheld remote keeps that boundary sharp: you operate a device. Move the interface onto the arm and the relationship shifts — the gesture is the command, and the flying unit reads as an extension of the intent rather than a thing being driven.</p>
+          <p class="prose" style="margin-top:14px;">A balloon turned out to be the right body for this. It is slow, light and slightly unwilling, so the gesture has to be offered rather than issued. Two reference points shaped it: Dennis Hong's work on soft, lightweight mobility, and <em>Buoyancé</em> (Axlab, 2025).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — SYSTEM -->
+  <section id="system">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>01 — the system</h2><span class="kicker">arm to air, over Wi-Fi</span></div>
+
+      <div class="flow reveal">
+        <div class="flow__step"><div class="k">on the arm</div><div class="n">Hand interaction</div><div class="d">pitch and roll read from the forearm</div></div>
+        <div class="flow__step"><div class="k">transmitter</div><div class="n">Hand Pico</div><div class="d">packs the angles, sends UDP over its own Wi-Fi network</div></div>
+        <div class="flow__step"><div class="k">receiver</div><div class="n">Fly Pico</div><div class="d">smooths the values, ramps the thrust</div></div>
+        <div class="flow__step"><div class="k">in the air</div><div class="n">Actuation</div><div class="d">servo aims, fan pushes, the balloon drifts</div></div>
+      </div>
+
+      <div class="block reveal" style="margin-top:clamp(36px,5vw,64px);">
+        <div class="block__body">
+          <h3>Two boards, one network, no infrastructure.</h3>
+          <p class="prose">Both ends are Raspberry Pi Pico W boards. The flying one hosts its own access point, so the piece carries its network with it and works in a room with no Wi-Fi at all. Messages go by plain <strong>UDP</strong> rather than a full OSC implementation — with neutral buoyancy this fragile, the cheapest possible protocol was the right one. Less to process, less to power, less delay between a wrist moving and the fan answering.</p>
+          <p class="prose" style="margin-top:14px;">Two numbers do most of the feel. A one-pole low-pass filter on the incoming angles removes the micro-tremor of a human hand, so the servo swings rather than jitters. Thrust is ramped in small steps instead of jumping, because servo and motor firing together draw enough current to brown out the board.</p>
+          <div class="specs">
+            <div class="spec"><div class="spec__n">2</div><div class="spec__l">Pico W boards</div></div>
+            <div class="spec"><div class="spec__n">6</div><div class="spec__l">22″ mylar balloons</div></div>
+            <div class="spec"><div class="spec__n">UDP</div><div class="spec__l">own access point</div></div>
+            <div class="spec"><div class="spec__n">0.12</div><div class="spec__l">smoothing alpha</div></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Raspberry Pi Pico W</span><span class="tag">UDP / Wi-Fi AP</span><span class="tag">servo + fan</span><span class="tag">LiPo</span><span class="tag">hand-soldered</span>
+          </div>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/gf-arm.jpg" alt="The controller worn on a forearm: a Pico W and a sensor board strapped along the arm, wired together" loading="lazy" /></span>
+          <p class="figcap">the controller, worn — no handset in the picture</p>
+          <span class="media media--contain" style="margin-top:14px; aspect-ratio:4/3;"><img src="media/gf-hand.jpg" alt="The same unit held up: a Pico W beside a small inertial sensor board" loading="lazy" /></span>
+          <p class="figcap">two boards and a battery, that is the whole of it</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — MAKING -->
+  <section id="making" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="block block--flip reveal">
+        <div class="block__body">
+          <span class="num">02 — the making</span>
+          <h3>Twice soldered, because the first one was planned badly.</h3>
+          <p class="prose">On the breadboard the Wi-Fi link worked immediately. The system fell over the moment the motor and servo joined it: one USB connection could not carry that load, and the boards reset under it. Each end got its own 5&nbsp;V battery, which also made the whole thing genuinely wireless rather than nominally so.</p>
+          <p class="prose" style="margin-top:14px;">Moving to a soldered board went wrong the first time. I had not planned the routes, so connections were unreliable in a way that was hard to diagnose. I stripped it and re-soldered the whole board, this time laying out every wire run before touching the iron. That second board is the one that flies.</p>
+          <p class="prose" style="margin-top:14px;"><strong>One constraint you cannot engineer away.</strong> Helium reacts to the room. Ambient temperature changes the gas density, which changes the lift, which changes everything the tuning assumed. Every session starts by re-checking the balance.</p>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/gf-unit.jpg" alt="The finished flying unit: a light wooden frame carrying the soldered board, battery, servo and propeller" loading="lazy" /></span>
+          <p class="figcap">the flying unit, complete — frame, board, servo, fan</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <div class="wall wall--4">
+          <span class="media"><img src="media/gf-breadboard.jpg" alt="The first prototype on a breadboard with the servo, propeller and wiring laid out" loading="lazy" /></span>
+          <span class="media"><img src="media/gf-solder.jpg" alt="The circuit part-way through being soldered onto perfboard on a workbench" loading="lazy" /></span>
+          <span class="media"><img src="media/gf-unit-back.jpg" alt="The underside of the finished unit showing the soldered connections" loading="lazy" /></span>
+          <span class="media"><img src="media/gf-mount.jpg" alt="The soldered board fixed to its wooden frame and tied to the mylar balloons" loading="lazy" /></span>
+        </div>
+        <p class="figcap">breadboard → perfboard → the board that flew → mounted to the balloons</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — THE TILT -->
+  <section id="tilt">
+    <div class="wrap">
+      <div class="block reveal">
+        <div class="block__body">
+          <span class="num">03 — what the tilt gave back</span>
+          <h3>An axis I did not build.</h3>
+          <p class="prose">The system was designed to move the balloon horizontally: the servo aims the fan left or right, the balloon drifts across the room. In testing it started climbing. Angling the servo off horizontal splits the thrust, and the vertical component is enough to lift a neutrally buoyant body.</p>
+          <p class="prose" style="margin-top:14px;">So the piece has a third dimension nobody designed, reachable only by tilting past where the control scheme expected you to stop. It is the most interesting thing in the build, and it arrived by accident — the kind of result you only get from putting the real thing in a real room.</p>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/gf-balloon.jpg" alt="The balloon assembly standing in the studio: six mylar balloons clustered into a body with thin legs and the fan unit below" loading="lazy" /></span>
+          <p class="figcap">six balloons, tuned to neutral buoyancy</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <span class="media media--wide"><img src="media/gf-key.jpg" alt="A person standing in a white studio with an arm raised, the balloon unit floating in the air across the room" loading="lazy" /></span>
+        <p class="figcap">an arm on one side of the room, a body of air on the other</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — LIMITS -->
+  <section id="limits" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>04 — where it stands</h2><span class="kicker">a working proof of concept</span></div>
+      <div class="cols">
+        <div class="reveal">
+          <p class="lead">It flies, it answers the hand, and it does both <span class="dim">untethered</span>. Everything past that is still prototype.</p>
+          <p class="prose" style="margin-top:20px;">Reading it against the recent work on soft floating robots is useful: gesture control there is usually done with external sensing — cameras or radio tracking watching from outside, sometimes with a human quietly operating off-stage. Here the sensing is first-person and worn. That is a small cell in someone else's taxonomy, and this is one prototype rather than a study, but it is the part worth developing.</p>
+        </div>
+        <div class="reveal">
+          <ul class="facts">
+            <li><span>works</span><span>untethered two-board link, smoothed gesture control, stable horizontal flight, and an unplanned vertical axis</span></li>
+            <li><span>bulky</span><span>the arm unit is still prototyping hardware. A custom board would make it wearable rather than strapped on</span></li>
+            <li><span>power</span><span>servo and fan together still spike the current. Better regulation is the next fix</span></li>
+            <li><span>axis</span><span>vertical movement is a side effect, not a control. It needs its own mechanism to be usable</span></li>
+            <li><span>not modular</span><span>the build is tuned to this balloon assembly and would need rework for another</span></li>
+            <li><span>references</span><span>Dennis Hong, <em>The Lightness of Submission</em>; <em>Buoyancé</em> (Axlab, 2025)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot__note">Gesture-Float — Yu-Ting (Harry) Liao · Goldsmiths 2026</span>
+    <span style="display:flex; gap:24px;">
+      <a href="index.html">← all work</a>
+      <a href="https://vimeo.com/1176254975" target="_blank" rel="noopener">vimeo</a>
+      <a href="mailto:yvw.liao@gmail.com">email</a>
+    </span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

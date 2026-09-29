@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Bonnet — a headpiece that veils the face when a camera is watching</title>
+<meta name="description" content="The Bonnet: a satirical anti-surveillance headpiece. A custom-trained YOLOv8 model detects a CCTV camera and a servo drops a fabric veil over the face. Physical Computing 1, MA Computational Arts, Goldsmiths 2025." />
+<meta property="og:title" content="The Bonnet" />
+<meta property="og:description" content="An anti-surveillance headpiece that veils the face when it sees a camera watching." />
+<meta property="og:image" content="https://yvwhy.github.io/media/tb-key.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__brand" href="index.html">← YU-TING&nbsp;LIAO</a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">menu</button>
+    <nav class="nav__links" id="menu">
+      <a href="#inversion">inversion</a>
+      <a href="#detection">detection</a>
+      <a href="#making">making</a>
+      <a href="#limits">limits</a>
+      <a href="index.html">index</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker reveal">Physical Computing 1 · MA Computational Arts · Goldsmiths · 2025</p>
+      <h1 class="hero__statement reveal">The Bonnet</h1>
+      <p class="lead reveal" style="margin-top:18px; max-width:40ch;">A headpiece that <strong>veils your face when it sees a camera watching</strong>. A custom-trained model looks for CCTV; when it finds one, a servo lowers a fabric blind over the face.</p>
+      <div class="hero__media reveal">
+        <span class="media">
+          <iframe src="https://player.vimeo.com/video/1144358503?app_id=122963&amp;dnt=1&amp;title=0&amp;byline=0&amp;portrait=0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="The Bonnet — video"></iframe>
+        </span>
+      </div>
+      <p class="figcap reveal">video, 2 min &nbsp;·&nbsp; <a class="link" href="https://vimeo.com/1144358503" target="_blank" rel="noopener">vimeo.com/1144358503</a></p>
+    </div>
+  </section>
+
+  <!-- THE QUESTION -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="cols">
+        <p class="lead reveal" style="max-width:32ch;">Facing the reality of ubiquitous surveillance, I asked <span class="dim">how we might protect our biometric data through what we wear.</span></p>
+        <div class="reveal">
+          <p class="prose">The piece responds to the condition of the <em>algorithmic gaze</em> — where the human face has stopped being a biological feature and become a trackable data point. In public space, privacy is no longer the default state. It has to be actively defended.</p>
+          <p class="prose" style="margin-top:14px;">I come to this from fashion. I have always wanted to push garments past utility, back to the oldest purpose of clothing: protection. From the weather, from contact — and now from an unwanted gaze.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — THE INVERSION -->
+  <section id="inversion">
+    <div class="wrap">
+      <div class="block reveal">
+        <div class="block__body">
+          <span class="num">01 — the inversion</span>
+          <h3>It uses the oppressor's tools to fight the oppression.</h3>
+          <p class="prose">The silhouette is borrowed twice over: from the 19th-century <strong>poke bonnet</strong> of Amish modesty, and from the <strong>wings</strong> of <em>The Handmaid's Tale</em>. Both were designed to narrow the wearer's field of view and enforce submission.</p>
+          <p class="prose" style="margin-top:14px;">The Bonnet turns that logic inside out. It leaves your vision alone and blocks the world's view of you instead — computer vision, the instrument of the watching, repurposed as the trigger for hiding. The bonnet becomes a tool of voluntary anonymity rather than imposed modesty.</p>
+          <div class="tag-row">
+            <span class="tag">YOLOv8</span><span class="tag">Roboflow</span><span class="tag">Arduino</span><span class="tag">MG996R servo</span><span class="tag">Roman blind</span>
+          </div>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/tb-key.jpg" alt="The Bonnet on a dress stand: a white structured hood with a gathered veil at the opening" loading="lazy" /></span>
+          <p class="figcap">the piece on the stand, veil retracted</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <div class="pair">
+          <span class="media"><img src="media/tb-veil-up.jpg" alt="The bonnet mounted on a wall, veil retracted, the face opening clear" loading="lazy" /></span>
+          <span class="media"><img src="media/tb-veil-down.jpg" alt="The same bonnet with the veil lowered, the face opening covered by gathered fabric" loading="lazy" /></span>
+        </div>
+        <p class="figcap">retracted (left) and deployed (right) — the whole interaction is these two states</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — DETECTION -->
+  <section id="detection" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="block block--flip reveal">
+        <div class="block__body">
+          <span class="num">02 — the detection</span>
+          <h3>A camera that looks for cameras.</h3>
+          <p class="prose">I curated and labelled a dataset of surveillance cameras on Roboflow and trained a YOLOv8 model on it, so the system recognises the thing watching rather than the face being watched. A webcam feed runs through the model in Python and the verdict travels to an Arduino over serial.</p>
+          <p class="prose" style="margin-top:14px;">Two details made it usable. <strong>Frame skipping</strong> — only every third frame is processed — cut the load enough to keep the video responsive. <strong>Debounce logic</strong> on the Arduino holds the veil down for at least five seconds after a trigger, so a camera glimpsed for half a second doesn't make the piece twitch.</p>
+          <div class="specs">
+            <div class="spec"><div class="spec__n">0.9</div><div class="spec__l">confidence threshold</div></div>
+            <div class="spec"><div class="spec__n">1<small>/3</small></div><div class="spec__l">frames processed</div></div>
+            <div class="spec"><div class="spec__n">5<small>s</small></div><div class="spec__l">minimum hold</div></div>
+            <div class="spec"><div class="spec__n">1</div><div class="spec__l">servo, continuous</div></div>
+          </div>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/tb-detect.jpg" alt="A crowded street crossing seen from above, with green detection boxes drawn over pedestrians" loading="lazy" /></span>
+          <p class="figcap">the condition the piece answers to</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <span class="media media--contain" style="aspect-ratio:1400/788;"><img src="media/tb-ui.jpg" alt="Two screen states side by side: SAFE, no CCTV detected, cover up; and HIDDEN, a CCTV detected in the camera view with a red box, cover down" loading="lazy" /></span>
+        <p class="figcap">the only two states the system can be in — and the red box that decides which</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — MAKING -->
+  <section id="making">
+    <div class="wrap">
+      <div class="block reveal">
+        <div class="block__body">
+          <span class="num">03 — the making</span>
+          <h3>The first mechanism did not survive contact with a head.</h3>
+          <p class="prose">The piece was going to inflate. I wanted an organic, breathing defence — airtight bladders swelling to close the opening. Testing killed it: getting bladders to seal reliably inside a head-worn garment turned into its own construction problem, and it was pulling the work away from the thing that actually mattered, which is how fast the gaze gets blocked.</p>
+          <p class="prose" style="margin-top:14px;">So I pivoted to a winch. A 360° continuous-rotation servo (MG996R) winds a soft veil up and down like a <strong>Roman blind</strong> — a textile mechanism, not a pneumatic one. That let the remaining time go into the fabric: it has to be soft enough to gather, and weighted at the hem so it falls instead of catching.</p>
+          <p class="prose" style="margin-top:14px;"><strong>Order of work.</strong> Software first. I got the detection pipeline working before touching the physical build, so that when the mechanism changed, the sensing did not have to.</p>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/tb-servo.jpg" alt="Close-up of the winch mechanism mounted on top of the bonnet: a servo with a spool, wired out to a controller" loading="lazy" /></span>
+          <p class="figcap">the winch that replaced the inflation system</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <div class="wall wall--4">
+          <span class="media"><img src="media/tb-sketch.jpg" alt="Hand-drawn construction sketch with notes: must soft fabric, fabric must have weight or add weight in the bottom, accumulate it to pull the mesh down" loading="lazy" /></span>
+          <span class="media"><img src="media/tb-wire.jpg" alt="Early wiring: an Arduino board and a servo on a breadboard" loading="lazy" /></span>
+          <span class="media"><img src="media/tb-bench.jpg" alt="The bonnet mounted on the workbench beside a cutting mat, wired to its controller" loading="lazy" /></span>
+          <span class="media"><img src="media/tb-setup.jpg" alt="The bonnet on its stand beside a laptop showing the camera feed" loading="lazy" /></span>
+        </div>
+        <p class="figcap">the notes that decided the fabric · first wiring · on the bench · running against a live feed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — LIMITS -->
+  <section id="limits" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>04 — where it stands</h2><span class="kicker">what works, what doesn't</span></div>
+      <div class="cols">
+        <div class="reveal">
+          <p class="lead">It demonstrates that a wearable can <span class="dim">actively defend</span> biometric data rather than only collect it — a physical firewall against the algorithmic gaze.</p>
+          <p class="prose" style="margin-top:20px;">It is also, honestly, a tethered object. The cables that make the detection possible are the same cables that keep it from being worn down a street, which is the only place the argument would really be tested.</p>
+        </div>
+        <div class="reveal">
+          <ul class="facts">
+            <li><span>works</span><span>detects a surveillance camera in a live webcam feed and deploys the veil without intervention</span></li>
+            <li><span>tethered</span><span>the current setup runs from a laptop over USB, so mobility is limited. Moving the pipeline onto a Raspberry Pi is the next step</span></li>
+            <li><span>accuracy</span><span>the model still needs fine-tuning to separate human faces from surveillance cameras reliably</span></li>
+            <li><span>next</span><span>adversarial fashion — textile patterns that confuse recognition before the veil ever has to move</span></li>
+            <li><span>reference</span><span>Behnaz Farahi, <em>Caress of the Gaze</em> (2016)</span></li>
+            <li><span>dataset</span><span>CCTV detection set built and published on Roboflow</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot__note">The Bonnet — Yu-Ting (Harry) Liao · Goldsmiths 2025</span>
+    <span style="display:flex; gap:24px;">
+      <a href="index.html">← all work</a>
+      <a href="https://vimeo.com/1144358503" target="_blank" rel="noopener">vimeo</a>
+      <a href="mailto:yvw.liao@gmail.com">email</a>
+    </span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

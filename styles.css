@@ -227,3 +227,29 @@ p{ color:var(--ink); }
 #work{ padding-top:clamp(28px,4vw,52px); }
 .section-head{ margin-bottom:clamp(28px,3.5vw,44px); }
 .card--feature{ margin-bottom:clamp(10px,2.5vw,30px); }
+
+/* ---------------- 2026-09-29: project pages (bonnet / gesture-float / fabri-form) ---------------- */
+.quote{
+  font-family:var(--head); font-size:clamp(18px,2.1vw,24px); line-height:1.42;
+  font-weight:400; letter-spacing:-0.01em; margin:0; max-width:34ch;
+  border-left:2px solid var(--ink); padding-left:18px;
+}
+.quote cite{ display:block; font-family:var(--mono); font-size:11.5px; font-style:normal; color:var(--faint); margin-top:14px; letter-spacing:.03em; }
+
+.flow{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; align-items:stretch; margin:26px 0 6px; }
+.flow__step{ border:1px solid var(--line-2); border-radius:10px; padding:14px 14px 16px; position:relative; }
+.flow__step .k{ font-family:var(--mono); font-size:10.5px; color:var(--faint); letter-spacing:.08em; text-transform:uppercase; }
+.flow__step .n{ font-family:var(--head); font-size:15px; font-weight:500; margin-top:6px; letter-spacing:-0.01em; }
+.flow__step .d{ font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:5px; line-height:1.5; }
+.flow__step + .flow__step::before{
+  content:"→"; position:absolute; left:-13px; top:50%; transform:translateY(-50%);
+  font-family:var(--mono); font-size:12px; color:var(--faint);
+}
+@media (max-width:760px){
+  .flow{ grid-template-columns:1fr; gap:22px; }
+  .flow__step + .flow__step::before{ content:"↓"; left:50%; top:-17px; transform:translateX(-50%); }
+}
+
+.pair--wide .media{ aspect-ratio:4/3; }
+.wall--4{ grid-template-columns:repeat(4,1fr); }
+@media (max-width:760px){ .wall{ grid-template-columns:repeat(3,1fr); } .wall--4{ grid-template-columns:repeat(2,1fr); } }

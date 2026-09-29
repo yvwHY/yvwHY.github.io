@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fabri-Form — a translation tool between a sketch and a pattern</title>
+<meta name="description" content="Fabri-Form: a digital pipeline for collaborative pattern cutting. A hand-drawn sketch goes to a multimodal language model, which fills a bounded parameter schema; the browser draws a printable 1:1 block. Six sliders keep authorship with the designer. AT2 practice-based research, MA Computational Arts, Goldsmiths 2026." />
+<meta property="og:title" content="Fabri-Form" />
+<meta property="og:description" content="A sketch becomes a printable 1:1 garment block — with every inference left open to be overruled." />
+<meta property="og:image" content="https://yvwhy.github.io/media/ff-explode.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__brand" href="index.html">← YU-TING&nbsp;LIAO</a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">menu</button>
+    <nav class="nav__links" id="menu">
+      <a href="#pipeline">pipeline</a>
+      <a href="#form">the form</a>
+      <a href="#friction">friction</a>
+      <a href="#paper">where it stops</a>
+      <a href="index.html">index</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker reveal">Practice-based research · MA Computational Arts · Goldsmiths · 2026</p>
+      <h1 class="hero__statement reveal">Fabri-Form</h1>
+      <p class="lead reveal" style="margin-top:18px; max-width:40ch;">A translation tool between <strong>a sketch and a pattern</strong>. Draw a garment by hand; a multimodal model fills in seven bounded parameters; the browser draws a printable 1:1 block. Six sliders let you overrule every inference it made.</p>
+      <div class="hero__media reveal">
+        <span class="media">
+          <iframe src="https://player.vimeo.com/video/1186248027?app_id=122963&amp;dnt=1&amp;title=0&amp;byline=0&amp;portrait=0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Fabri-Form — video"></iframe>
+        </span>
+      </div>
+      <p class="figcap reveal">video, 4 min &nbsp;·&nbsp; <a class="link" href="https://vimeo.com/1186248027" target="_blank" rel="noopener">vimeo.com/1186248027</a> &nbsp;·&nbsp; <a class="link" href="https://yvwhy.github.io/fabriform/" target="_blank" rel="noopener">try it live ↗</a></p>
+    </div>
+  </section>
+
+  <!-- THE SENTENCE -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="cols">
+        <blockquote class="quote reveal">"Young designers suffer because they don't know how to actualise what they imagine. And senior makers suffer because young designers cannot communicate what they want. The real problem is this mutual incomprehension."
+          <cite>a senior Taipei-based pattern cutter, interviewed April 2026</cite>
+        </blockquote>
+        <div class="reveal">
+          <p class="prose">The whole project is built around that sentence. Garment making has split into two halves that no longer talk: industrial production on one side — fast, precise, de-skilled — and gate-kept couture handcraft on the other. The middle ground, where a designer thinks <em>through</em> a pattern, is disappearing.</p>
+          <p class="prose" style="margin-top:14px;">Pressed on whether a tool like this actually serves the craft it claims to honour, the same cutter answered with a paradox: a system that compensates for dwindling expertise also accelerates that dwindling. It <strong>"strips away the profession itself."</strong> I built with that in view rather than against it.</p>
+          <p class="prose" style="margin-top:14px;">The interview also moved the addressee. I had imagined a tool for pattern cutters, building on a Taipei internship — something to help senior makers externalise their 3D thinking. That tool would have served only one end of a broken line.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — PIPELINE -->
+  <section id="pipeline">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>01 — the pipeline</h2><span class="kicker">pen on paper to paper pattern</span></div>
+
+      <div class="flow reveal">
+        <div class="flow__step"><div class="k">input</div><div class="n">A drawn sketch</div><div class="d">photographed or uploaded, however rough</div></div>
+        <div class="flow__step"><div class="k">inference</div><div class="n">Multimodal model</div><div class="d">fills a seven-field form, nothing freer</div></div>
+        <div class="flow__step"><div class="k">override</div><div class="n">Six sliders</div><div class="d">every inferred value is yours to change</div></div>
+        <div class="flow__step"><div class="k">output</div><div class="n">1:1 block</div><div class="d">three pieces, printable, seams matching</div></div>
+      </div>
+
+      <div class="block reveal" style="margin-top:clamp(36px,5vw,64px);">
+        <div class="block__body">
+          <h3>The geometry is a pattern cutter's, not a model's.</h3>
+          <p class="prose">Pattern generation runs entirely in the browser. The drafting is a simplified derivation of <strong>Aldrich's metric block-cutting system</strong> — half-chest, armhole depth, neck width and sleeve cap height computed from a handful of body measurements by Aldrich's proportional logic, then drawn as cubic Bézier curves. The model never draws anything. It only supplies numbers, and the numbers go into a method that predates it.</p>
+          <p class="prose" style="margin-top:14px;">The output is three pieces — front, back, and a sleeve cut twice — viewable as a flat pattern, as a cut layout for estimating fabric, or as an exploded assembly diagram with the seam correspondences drawn in.</p>
+          <div class="specs">
+            <div class="spec"><div class="spec__n">7</div><div class="spec__l">inferred fields</div></div>
+            <div class="spec"><div class="spec__n">6</div><div class="spec__l">sliders to overrule</div></div>
+            <div class="spec"><div class="spec__n">3</div><div class="spec__l">pattern pieces</div></div>
+            <div class="spec"><div class="spec__n">1:1</div><div class="spec__l">prints to scale</div></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">multimodal LLM</span><span class="tag">Aldrich blocks</span><span class="tag">cubic Bézier</span><span class="tag">SVG</span><span class="tag">Python proxy</span>
+          </div>
+        </div>
+        <div class="block__media">
+          <span class="media media--contain" style="aspect-ratio:1400/1291;"><img src="media/ff-sketch.jpg" alt="A hand-drawn sketch of a long-sleeved top in blue pen on white paper" loading="lazy" /></span>
+          <p class="figcap">the input — a sketch, drawn by hand</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <span class="media media--contain" style="aspect-ratio:1700/939;"><img src="media/ff-ui.jpg" alt="The Fabri-Form interface: input panel with the sketch on the left, exploded pattern view in the centre, output measurements and download on the right" loading="lazy" /></span>
+        <p class="figcap">the interface — input, the algorithmic brain, output</p>
+        <span class="media media--contain" style="margin-top:22px; aspect-ratio:1800/1131;"><img src="media/ff-explode.jpg" alt="Exploded view of the pattern pieces in assembly order, with dashed connectors showing seam correspondences" loading="lazy" /></span>
+        <p class="figcap">exploded assembly — dashed connectors mark the seams that meet</p>
+        <span class="media media--contain" style="margin-top:22px; aspect-ratio:1800/478;"><img src="media/ff-pattern.jpg" alt="The three flat pattern pieces: front, back and sleeve, each labelled with its cut instruction" loading="lazy" /></span>
+        <p class="figcap">the flat pattern it prints from — front, back, sleeve cut twice</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — THE FORM -->
+  <section id="form" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="block block--flip reveal">
+        <div class="block__body">
+          <span class="num">02 — the prompt is a form</span>
+          <h3>The model is not invited to interpret. It is asked to fill in a form.</h3>
+          <p class="prose">The browser sends the sketch to a small Python proxy as a base64 image inside a deliberately restrictive prompt. Instead of letting the model describe the garment in prose, the prompt specifies a JSON schema with seven fields — neckline style, neck depth, body length, sleeve length, ease, shoulder width, and one sentence of reasoning — and every numeric field carries an explicit minimum and maximum.</p>
+          <p class="prose" style="margin-top:14px;">That constraint is the argument. What Tocchetti and colleagues call <em>transparent guidance</em> is made literal here: six sliders expose every parameter the model inferred, and the designer can overrule any of them. <strong>Authorship stays with the person, not the inference.</strong></p>
+          <p class="prose" style="margin-top:14px;">The proxy itself is thin — it keeps the API key server-side, adds the CORS headers the endpoint does not provide, and answers a health check. Read another way, it is the file that names what the project does: <strong>it stands in for an absent figure, the pattern cutter, without becoming that figure.</strong></p>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall media--contain"><img src="media/ff-code.jpg" alt="The generatePattern function computing half chest, shoulder, armhole depth, neck width and sleeve cap height, then building front, back and sleeve pieces" loading="lazy" /></span>
+          <p class="figcap">the drafting function — Aldrich's proportions in code</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <span class="media media--contain" style="aspect-ratio:1076/312;"><img src="media/ff-prompt.jpg" alt="The prompt source: a JSON schema listing neckline, neck depth, body length, sleeve length, ease, shoulder width and reasoning, each with explicit bounds" loading="lazy" /></span>
+        <p class="figcap">the prompt — seven fields, each with a floor and a ceiling. A schema, not an invitation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — FRICTION -->
+  <section id="friction">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>03 — friction points</h2><span class="kicker">two failures worth keeping</span></div>
+      <div class="block reveal">
+        <div class="block__body">
+          <span class="num">the first</span>
+          <h3>The bug was in the translations I had assumed were mechanical.</h3>
+          <p class="prose">Early on the model read a sketch correctly and returned a crew neckline. The drawing came out with a V-neck. The fault was downstream — a default in the slider state was overriding the parsed value — and tracking it down was easy. What it left behind was not.</p>
+          <p class="prose" style="margin-top:14px;">I had been describing the pipeline as one translation, sketch to pattern. It is four: sketch to JSON, JSON to state, state to SVG, SVG to printed paper. The failure was not in the inference, which is the part everyone watches. It was in a handover I had assumed was plumbing.</p>
+        </div>
+        <div class="block__media">
+          <span class="media media--contain"><img src="media/ff-online.jpg" alt="The interface status bar reading: API, proxy online, multimodal LLM, with a green indicator" loading="lazy" /></span>
+          <span class="media media--contain" style="margin-top:10px;"><img src="media/ff-offline.jpg" alt="The same status bar reading: API, proxy offline, preset mode, with a red indicator" loading="lazy" /></span>
+          <p class="figcap">the two states the interface will admit to being in</p>
+        </div>
+      </div>
+
+      <div class="block reveal" style="margin-top:clamp(36px,5vw,64px);">
+        <div class="block__body">
+          <span class="num">the second</span>
+          <h3>The fallback is the more honest version of the question.</h3>
+          <p class="prose">The proxy ran on localhost during development. Once the front end was hosted, the browser could no longer reach it, and moving to a public host brought cold starts and timeouts with it. So I built a local fallback: if the proxy is unreachable, the interface offers preset sketches and a pixel-level heuristic that runs entirely in the browser.</p>
+          <p class="prose" style="margin-top:14px;">That is not graceful degradation. <strong>The cutter the proxy stands in for is, in real life, frequently unreachable.</strong> The offline mode says what the project is about more plainly than the online one does.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — WHERE IT STOPS -->
+  <section id="paper" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="block block--flip reveal">
+        <div class="block__body">
+          <span class="num">04 — where it stops</span>
+          <h3>Stage 01 ends at paper. That is a decision, not a shortfall.</h3>
+          <p class="prose">The pattern prints at 1:1, the seams line up, the geometry holds. It does not land on cloth, and that is the boundary the project chose. A separate bench exercise — driving a pan-tilt laser to draw simple shapes — sits beside the work as the seed of Stage 02.</p>
+          <p class="prose" style="margin-top:14px;">Before a line can be projected onto fabric, the translation it encodes has to be shown to hold. <strong>The software stage is not a prototype of the hardware stage; it is its precondition.</strong> Moving to cloth before the translation is honest would be exactly the automation this project refuses.</p>
+          <p class="prose" style="margin-top:14px;">What Stage 01 demonstrates is narrow: that the middle ground between sketch and pattern can be inhabited on screen — and that the most fragile translations were not the model's, but mine.</p>
+        </div>
+        <div class="block__media">
+          <span class="media media--tall"><img src="media/ff-laser.jpg" alt="A bench test: a pan-tilt rig with a laser aimed at a white board, wired to a microcontroller" loading="lazy" /></span>
+          <p class="figcap">the Stage 02 seed — a pan-tilt laser, drawing shapes on a bench</p>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(32px,5vw,56px);" class="reveal">
+        <span class="media media--contain" style="aspect-ratio:1800/417;"><img src="media/ff-stage.jpg" alt="A three-stage roadmap: 01 the digital pipeline, now; 02 embodied projection with a pan-tilt laser, planned; 03 physical simulation and broader garments, future" loading="lazy" /></span>
+        <p class="figcap">what is submitted, what is planned, what is later</p>
+      </div>
+
+      <div class="cols reveal" style="margin-top:clamp(36px,5vw,64px);">
+        <div>
+          <p class="lead">The paradox the cutter named is not resolved by Stage 01, and <span class="dim">was never going to be.</span></p>
+        </div>
+        <div>
+          <ul class="facts">
+            <li><span>live</span><span><a class="link" href="https://yvwhy.github.io/fabriform/" target="_blank" rel="noopener">yvwhy.github.io/fabriform ↗</a> — works offline in preset mode if the proxy is asleep</span></li>
+            <li><span>built with</span><span>plain HTML, CSS and JavaScript, no build step; a standard-library Python proxy; a multimodal LLM behind it</span></li>
+            <li><span>method</span><span>a semi-structured interview with a senior pattern cutter, conducted, transcribed and translated by me from Mandarin</span></li>
+            <li><span>disclosed</span><span>the submission carries a full account of where AI was used in the making — including that the artefact is itself a demonstration of the collaboration it theorises</span></li>
+            <li><span>theory</span><span>Sennett, Ingold, Barad, Almond, Tocchetti et al., Korosteleva &amp; Sorkine-Hornung</span></li>
+            <li><span>not done</span><span>no user study with designers or cutters. Nothing has been cut from these patterns in fabric</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot__note">Fabri-Form — Yu-Ting (Harry) Liao · Goldsmiths 2026</span>
+    <span style="display:flex; gap:24px;">
+      <a href="index.html">← all work</a>
+      <a href="https://yvwhy.github.io/fabriform/" target="_blank" rel="noopener">live</a>
+      <a href="https://vimeo.com/1186248027" target="_blank" rel="noopener">vimeo</a>
+      <a href="mailto:yvw.liao@gmail.com">email</a>
+    </span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
